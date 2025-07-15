@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arlan Web — Modern Web Solutions for Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Hide Kazakh content by default */
+        .lang-kk { display: none; }
+
+        /* Custom Fonts */
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Poppins', sans-serif; }
+
+        /* Modern background & glassmorphism */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: radial-gradient(circle at 15% 50%, rgba(126, 87, 194, 0.2), transparent 40%),
+                        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.2), transparent 40%);
+            will-change: transform;
+            z-index: -1;
+            animation: aurora 20s linear infinite;
+        }
+        
+        @keyframes aurora {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scroll-triggered animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-slate-300 antialiased selection:bg-indigo-500/50">
+
+    <div class="fixed top-6 right-6 z-50 flex gap-2">
+        <button id="btn-ru" class="px-3 py-1.5 rounded-md text-sm font-semibold transition-colors duration-300">RU</button>
+        <button id="btn-kk" class="px-3 py-1.5 rounded-md text-sm font-semibold transition-colors duration-300">KK</button>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6">
+    
+        <header id="about" class="min-h-screen flex flex-col justify-center py-20">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white font-display leading-tight">
+                <span class="lang-ru">Эффективные сайты</span>
+                <span class="lang-kk">Тиімді сайттар</span><br/>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-400 to-indigo-500">
+                    <span class="lang-ru">для вашего бизнеса</span>
+                    <span class="lang-kk">сіздің бизнес үшін</span>
+                </span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl">
+                <strong class="text-slate-200">Әлібай Арлан</strong>. 
+                <span class="lang-ru">Создаю быстрые, современные и двуязычные сайты в Алматы, которые привлекают клиентов и решают задачи.</span>
+                <span class="lang-kk">Алматыда клиенттерді тартатын және бизнес мәселелерін шешетін жылдам, заманауи және екітілді сайттар жасаймын.</span>
+            </p>
+            <a href="#contact" class="mt-10 inline-flex items-center gap-3 w-fit bg-indigo-600 text-white font-semibold px-7 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
+                <span class="lang-ru">Обсудить проект</span>
+                <span class="lang-kk">Жобаны талқылау</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
+        </header>
+
+        <main class="space-y-28 md:space-y-36 pb-24">
+
+            <section id="services" class="space-y-10 reveal">
+                <h2 class="text-4xl font-bold text-center text-white font-display">
+                    <span class="lang-ru">Услуги</span><span class="lang-kk">Қызметтер</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-xl p-8 transition-all duration-300 hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-900/50">
+                        <h3 class="text-xl font-bold text-white mb-2">Визитка</h3>
+                        <p class="text-slate-400 text-sm mb-4 lang-ru">Компактный сайт для презентации</p>
+                        <p class="text-slate-400 text-sm mb-4 lang-kk">Бизнесті таныстыруға арналған сайт</p>
+                        <p class="text-4xl font-bold text-white">55 000 ₸</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-8 transition-all duration-300 hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-900/50">
+                        <h3 class="text-xl font-bold text-white mb-2">Лендинг</h3>
+                        <p class="text-slate-400 text-sm mb-4 lang-ru">Для продажи одного товара или услуги</p>
+                        <p class="text-slate-400 text-sm mb-4 lang-kk">Бір тауарды немесе қызметті сату</p>
+                        <p class="text-4xl font-bold text-white">80 000 ₸</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-8 transition-all duration-300 hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-900/50">
+                        <h3 class="text-xl font-bold text-white mb-2">Сайт с бронью</h3>
+                        <p class="text-slate-400 text-sm mb-4 lang-ru">Для салонов, врачей и консультантов</p>
+                        <p class="text-slate-400 text-sm mb-4 lang-kk">Салондар, дәрігерлер, кеңесшілер үшін</p>
+                        <p class="text-4xl font-bold text-white">120 000 ₸</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="process" class="space-y-10 reveal">
+                <h2 class="text-4xl font-bold text-center text-white font-display">
+                    <span class="lang-ru">Процесс работы</span><span class="lang-kk">Жұмыс процесі</span>
+                </h2>
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-slate-700"></div>
+                    <div class="space-y-12">
+                         <div class="relative pl-12">
+                            <div class="absolute left-0 top-1.5 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white border-4 border-slate-900">1</div>
+                            <h3 class="font-bold text-white text-lg lang-ru">Обсуждение</h3>
+                            <h3 class="font-bold text-white text-lg lang-kk">Талқылау</h3>
+                            <p class="text-slate-400 lang-ru">Созваниваемся, чтобы понять ваши цели и задачи.</p>
+                            <p class="text-slate-400 lang-kk">Мақсаттарыңыз бен міндеттеріңізді түсіну үшін қоңырау шаламыз.</p>
+                        </div>
+                         <div class="relative pl-12">
+                            <div class="absolute left-0 top-1.5 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white border-4 border-slate-900">2</div>
+                            <h3 class="font-bold text-white text-lg lang-ru">Дизайн</h3>
+                            <h3 class="font-bold text-white text-lg lang-kk">Дизайн</h3>
+                            <p class="text-slate-400 lang-ru">Создаю и согласовываю с вами макет будущего сайта.</p>
+                            <p class="text-slate-400 lang-kk">Болашақ сайттың макетін жасап, сізбен келісемін.</p>
+                        </div>
+                         <div class="relative pl-12">
+                            <div class="absolute left-0 top-1.5 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white border-4 border-slate-900">3</div>
+                            <h3 class="font-bold text-white text-lg lang-ru">Разработка</h3>
+                            <h3 class="font-bold text-white text-lg lang-kk">Әзірлеу</h3>
+                            <p class="text-slate-400 lang-ru">Воплощаю дизайн в код, настраиваю функционал.</p>
+                            <p class="text-slate-400 lang-kk">Дизайнды кодқа айналдырып, функционалды баптаймын.</p>
+                        </div>
+                         <div class="relative pl-12">
+                            <div class="absolute left-0 top-1.5 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white border-4 border-slate-900">4</div>
+                            <h3 class="font-bold text-white text-lg lang-ru">Запуск</h3>
+                            <h3 class="font-bold text-white text-lg lang-kk">Іске қосу</h3>
+                            <p class="text-slate-400 lang-ru">Размещаю сайт в сети и передаю вам все доступы.</p>
+                            <p class="text-slate-400 lang-kk">Сайтты желіге орналастырып, барлық рұқсатты сізге беремін.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="reveal">
+                <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
+                    <h2 class="text-4xl font-bold text-white font-display">
+                        <span class="lang-ru">Давайте создадим что-то крутое</span>
+                        <span class="lang-kk">Керемет жоба жасайық</span>
+                    </h2>
+                    <p class="mt-4 text-lg text-slate-400 max-w-xl mx-auto">
+                        <span class="lang-ru">Напишите мне, и мы обсудим, как ваш новый сайт поможет вашему бизнесу.</span>
+                        <span class="lang-kk">Маған жазыңыз, жаңа сайтыңыз бизнесіңізге қалай көмектесетінін талқылайық.</span>
+                    </p>
+                    <a href="https://t.me/ArLaN_Alibai" target="_blank" class="mt-8 inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
+                        <span class="lang-ru">Написать в Telegram</span>
+                        <span class="lang-kk">Telegram-ға жазу</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer class="text-center text-sm text-slate-500 py-8">
+        © 2025 Arlan Web. <span class="lang-ru">Все права защищены.</span><span class="lang-kk">Барлық құқықтар қорғалған.</span>
+    </footer>
+
+<script>
+    // --- Language Switcher ---
+    const ruBtn = document.getElementById('btn-ru');
+    const kkBtn = document.getElementById('btn-kk');
+    const allRuContent = document.querySelectorAll('.lang-ru');
+    const allKkContent = document.querySelectorAll('.lang-kk');
+
+    function switchLang(lang) {
+        if (lang === 'ru') {
+            allKkContent.forEach(el => el.style.display = 'none');
+            allRuContent.forEach(el => el.style.display = 'inline'); // Use inline for better flow
+            ruBtn.classList.add('bg-indigo-600', 'text-white');
+            ruBtn.classList.remove('bg-gray-800/50', 'text-slate-300');
+            kkBtn.classList.add('bg-gray-800/50', 'text-slate-300');
+            kkBtn.classList.remove('bg-indigo-600', 'text-white');
+        } else {
+            allRuContent.forEach(el => el.style.display = 'none');
+            allKkContent.forEach(el => el.style.display = 'inline'); // Use inline for better flow
+            kkBtn.classList.add('bg-indigo-600', 'text-white');
+            kkBtn.classList.remove('bg-gray-800/50', 'text-slate-300');
+            ruBtn.classList.add('bg-gray-800/50', 'text-slate-300');
+            ruBtn.classList.remove('bg-indigo-600', 'text-white');
+        }
+    }
+    ruBtn.addEventListener('click', () => switchLang('ru'));
+    kkBtn.addEventListener('click', () => switchLang('kk'));
+    switchLang('ru'); // Set initial language
+
+    // --- Scroll Animations ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
