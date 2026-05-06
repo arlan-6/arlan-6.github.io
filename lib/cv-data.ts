@@ -60,6 +60,7 @@ export const cvData = {
       name: "Qoldanba",
       summary: "A student service for viewing schedules and deadlines.",
       href: "https://github.com/arlan-6/qoldanba",
+      website: "https://qoldanba.vercel.app",
       stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, Supabase",
       details: [
         "Built authentication for students.",
@@ -71,6 +72,7 @@ export const cvData = {
       name: "Shaqr",
       summary: "A platform for creating online invitations.",
       href: "https://github.com/arlan-6/invites",
+      website: "https://invitestry2.vercel.app/",
       stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, MongoDB, Better Auth",
       details: [
         "Configured user authentication.",

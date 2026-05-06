@@ -1,4 +1,8 @@
-import { IconBrandGithub, IconChevronDown } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconChevronDown,
+  IconGlobe,
+} from "@tabler/icons-react";
 
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,7 +12,9 @@ import { cn } from "@/lib/utils";
 type ProjectsSectionProps = {
   expandedProject: number;
   projects: CvData["projects"];
-  onExpandedProjectChange: (index: number | ((current: number) => number)) => void;
+  onExpandedProjectChange: (
+    index: number | ((current: number) => number),
+  ) => void;
 };
 
 export function ProjectsSection({
@@ -57,7 +63,10 @@ export function ProjectsSection({
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground">
                   <IconChevronDown
                     aria-hidden="true"
-                    className={cn("size-5 transition", isExpanded && "rotate-180")}
+                    className={cn(
+                      "size-5 transition",
+                      isExpanded && "rotate-180",
+                    )}
                   />
                 </span>
               </button>
@@ -73,21 +82,37 @@ export function ProjectsSection({
                 <div className="overflow-hidden">
                   <div className="border-t border-border px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
                     <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
-                      <Badge variant="muted" className="w-fit whitespace-normal text-left">
+                      <Badge
+                        variant="muted"
+                        className="w-fit whitespace-normal text-left"
+                      >
                         {project.stack}
                       </Badge>
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={buttonVariants({
-                          variant: "outline",
-                          size: "xs",
-                        })}
-                      >
-                        <IconBrandGithub aria-hidden="true" />
-                        GitHub
-                      </a>
+                      <div className="">
+                        <a
+                          href={project.website}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={buttonVariants({
+                            variant: "outline",
+                            size: "xs",
+                          })}
+                        >
+                          <IconGlobe aria-hidden="true" />
+                        </a>
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={buttonVariants({
+                            variant: "outline",
+                            size: "xs",
+                          })}
+                        >
+                          <IconBrandGithub aria-hidden="true" />
+                          GitHub
+                        </a>
+                      </div>
                     </div>
                     <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground sm:grid-cols-2">
                       {project.details.map((detail) => (
