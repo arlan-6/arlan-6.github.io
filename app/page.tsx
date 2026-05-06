@@ -13,6 +13,7 @@ import { ProfileCard } from "@/components/portfolio/profile-card";
 import { ProgressBar } from "@/components/portfolio/progress-bar";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SiteHeader } from "@/components/portfolio/site-header";
+import { StructuredData } from "@/components/portfolio/structured-data";
 import { cvData } from "@/lib/cv-data";
 
 export default function Home() {
@@ -104,6 +105,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <StructuredData links={links} profile={profile} projects={projects} />
       <ProgressBar value={scrollProgress} />
 
       <SiteHeader
