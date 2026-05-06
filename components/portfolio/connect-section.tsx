@@ -42,13 +42,13 @@ type ConnectSectionProps = {
 
 export function ConnectSection({ links, profile }: ConnectSectionProps) {
   const [selected, setSelected] = useState<ConversationId>("internship");
+  const [message, setMessage] = useState<string>(conversationOptions[0].message);
   const [copied, setCopied] = useState(false);
   const telegramLink = links.find((link) => link.label === "Telegram");
   const selectedOption = useMemo(
     () => conversationOptions.find((option) => option.id === selected),
     [selected],
   );
-  const message = selectedOption?.message ?? conversationOptions[0].message;
   const telegramHref = telegramLink
     ? `${telegramLink.href}?text=${encodeURIComponent(message)}`
     : undefined;
@@ -64,6 +64,15 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
     } catch {
       setCopied(false);
     }
+  };
+
+  const selectConversation = (id: ConversationId) => {
+    setSelected(id);
+    setMessage(
+      conversationOptions.find((option) => option.id === id)?.message ??
+        conversationOptions[0].message,
+    );
+    setCopied(false);
   };
 
   return (
@@ -90,7 +99,7 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
                   type="button"
                   variant={isSelected ? "default" : "outline"}
                   size="sm"
-                  onClick={() => setSelected(option.id)}
+                  onClick={() => selectConversation(option.id)}
                 >
                   {isSelected ? <IconCheck aria-hidden="true" /> : null}
                   {option.label}
@@ -99,9 +108,23 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
             })}
           </div>
 
-          <div className="mt-5 rounded-lg border border-border bg-muted/30 p-4">
-            <p className="text-sm leading-7 text-muted-foreground">{message}</p>
-          </div>
+          <label
+            htmlFor="connect-message"
+            className="mt-5 block text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground"
+          >
+            Message
+          </label>
+          <textarea
+            id="connect-message"
+            value={message}
+            onChange={(event) => {
+              setMessage(event.target.value);
+              setCopied(false);
+            }}
+            rows={4}
+            className="mt-2 min-h-32 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-sm leading-7 text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            placeholder={selectedOption?.message}
+          />
         </div>
 
         <div className="flex flex-col justify-end gap-2">
