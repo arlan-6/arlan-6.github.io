@@ -23,13 +23,22 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} portfolio preview`,
+      },
+    ],
     locale: siteConfig.locale,
     type: "profile",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   icons: {
     icon: [{ url: "/icons8-man-16.png", sizes: "16x16", type: "image/png" }],

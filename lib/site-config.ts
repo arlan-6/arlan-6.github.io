@@ -4,6 +4,7 @@ export const siteConfig = {
   description:
     "Portfolio of Alibay Arlan Akhanuly, a junior web developer in Astana building React, Next.js, Tailwind CSS, and shadcn/ui projects.",
   url: "https://arlan-6.github.io",
+  ogImage: "/og-image.png",
   locale: "en_US",
   keywords: [
     "Alibay Arlan Akhanuly",
