@@ -1,11 +1,24 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   IconBrandGithub,
   IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconExternalLink,
   IconGlobe,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  Carousel,
+  type CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import type { CvData } from "@/lib/cv-data";
 import { cn } from "@/lib/utils";
 
@@ -64,7 +77,7 @@ export function ProjectsSection({
                     {project.summary}
                   </span>
                 </span>
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-200 group-hover:border-primary/40 group-hover:bg-primary/5 group-hover:text-foreground">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-200 group-hover:border-primary/40 group-hover:bg-primary/5 group-hover:text-foreground">
                   <IconChevronDown
                     aria-hidden="true"
                     className={cn(
@@ -131,6 +144,11 @@ export function ProjectsSection({
                         </li>
                       ))}
                     </ul>
+
+                    {/* <ScreenshotCarousel
+                      projectName={project.name}
+                      screenshots={project.screenshots}
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -139,5 +157,138 @@ export function ProjectsSection({
         })}
       </div>
     </section>
+  );
+}
+
+type Screenshot = CvData["projects"][number]["screenshots"][number];
+
+type ScreenshotCarouselProps = {
+  projectName: string;
+  screenshots: readonly Screenshot[];
+};
+
+function ScreenshotCarousel({
+  projectName,
+  screenshots,
+}: ScreenshotCarouselProps) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [snapCount, setSnapCount] = useState(0);
+  const activeScreenshot = screenshots[selectedIndex] ?? screenshots[0];
+
+  useEffect(() => {
+    if (!api) return;
+
+    const updateSelected = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+      setSnapCount(api.scrollSnapList().length);
+    };
+
+    updateSelected();
+    api.on("select", updateSelected);
+    api.on("reInit", updateSelected);
+
+    return () => {
+      api.off("select", updateSelected);
+      api.off("reInit", updateSelected);
+    };
+  }, [api]);
+
+  return (
+    <div className="mt-5 overflow-hidden rounded-lg border border-border bg-background">
+      <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-3 py-2.5">
+        <div className="flex items-center gap-1.5">
+          <span className="size-2 rounded-full bg-red-400" />
+          <span className="size-2 rounded-full bg-amber-400" />
+          <span className="size-2 rounded-full bg-green-400" />
+        </div>
+        <span className="min-w-0 truncate text-xs font-medium text-muted-foreground">
+          {projectName} preview
+        </span>
+        <span className="text-xs text-muted-foreground">
+          {selectedIndex + 1}/{Math.max(snapCount, screenshots.length)}
+        </span>
+      </div>
+
+      <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
+        <CarouselContent className="-ml-0">
+          {screenshots.map((screenshot) => (
+            <CarouselItem key={screenshot.src} className="basis-full pl-0">
+              <a
+                href={screenshot.src}
+                target="_blank"
+                rel="noreferrer"
+                className="group/slide block overflow-hidden bg-muted"
+                aria-label={`Open ${screenshot.label} screenshot for ${projectName}`}
+              >
+                <div className="relative aspect-video w-full overflow-hidden bg-muted/60 p-3 sm:p-4">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      fill
+                      sizes="(min-width: 1024px) 960px, calc(100vw - 3rem)"
+                      className="object-contain drop-shadow-sm transition-transform duration-500 group-hover/slide:scale-[1.01]"
+                    />
+                  </div>
+                  <span className="absolute right-3 top-3 flex items-center gap-1 rounded-lg border border-border bg-background/95 px-2.5 py-1.5 text-xs font-medium text-foreground opacity-0 shadow-sm backdrop-blur transition-opacity duration-200 group-hover/slide:opacity-100">
+                    <IconExternalLink aria-hidden="true" className="size-3.5" />
+                    Open
+                  </span>
+                </div>
+              </a>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="flex flex-col gap-3 border-t border-border px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold">{activeScreenshot.label}</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {activeScreenshot.width}x{activeScreenshot.height} · opens full-size
+          </p>
+        </div>
+        {screenshots.length > 1 ? (
+          <div className="flex flex-wrap items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="icon-sm"
+              onClick={() => api?.scrollPrev()}
+              aria-label="Previous screenshot"
+            >
+              <IconChevronLeft aria-hidden="true" className="size-4" />
+            </Button>
+            <div className="flex gap-1.5" aria-label="Screenshot slides">
+              {screenshots.map((screenshot, index) => (
+                <button
+                  key={screenshot.src}
+                  type="button"
+                  className={cn(
+                    "h-2.5 rounded-full transition-all duration-200",
+                    index === selectedIndex
+                      ? "w-8 bg-primary"
+                      : "w-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/50",
+                  )}
+                  aria-label={`Go to ${screenshot.label} screenshot`}
+                  aria-current={index === selectedIndex}
+                  onClick={() => api?.scrollTo(index)}
+                />
+              ))}
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon-sm"
+              onClick={() => api?.scrollNext()}
+              aria-label="Next screenshot"
+            >
+              <IconChevronRight aria-hidden="true" className="size-4" />
+            </Button>
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }

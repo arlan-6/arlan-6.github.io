@@ -1,6 +1,7 @@
 import {
   IconBrandTelegram,
   IconCopy,
+  IconDownload,
   IconMail,
   IconMapPin,
   IconPhone,
@@ -29,6 +30,7 @@ export function ProfileCard({
   onCopyEmail,
 }: ProfileCardProps) {
   const telegramLink = links.find((link) => link.label === "Telegram");
+  const cvHref = "/alibay-arlan-cv.pdf";
 
   return (
     <Card className="w-[calc(100vw-2rem)] max-w-full min-w-0 overflow-hidden lg:w-auto">
@@ -131,6 +133,20 @@ export function ProfileCard({
               <IconCopy aria-hidden="true" />
             </Button>
           </div>
+
+          <a
+            href={cvHref}
+            download
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full",
+            })}
+          >
+            <IconDownload aria-hidden="true" />
+            Download CV
+          </a>
+
           <Separator />
 
           <div>

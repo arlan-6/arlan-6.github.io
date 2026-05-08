@@ -69,11 +69,44 @@ export const cvData = {
   projects: [
     {
       name: "Qoldanba",
-      summary:
-        "Student service platform for viewing schedules and deadlines.",
+      summary: "Student service platform for viewing schedules and deadlines.",
       href: "https://github.com/arlan-6/qoldanba",
       website: "https://qoldanba.vercel.app",
       stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, Supabase",
+      screenshots: [
+        {
+          src: "/screenshots/qoldanba/home-page.png",
+          alt: "Qoldanba landing page screenshot",
+          label: "Landing page",
+          width: 1920,
+          height: 1096,
+          aspectRatio: "1920 / 1096",
+        },
+        {
+          src: "/screenshots/qoldanba/dashboard-page.png",
+          alt: "Qoldanba dashboard screenshot",
+          label: "Dashboard",
+          width: 1920,
+          height: 1190,
+          aspectRatio: "1920 / 1190",
+        },
+        {
+          src: "/screenshots/qoldanba/academic-year-page.png",
+          alt: "Qoldanba academic year view screenshot",
+          label: "Academic year",
+          width: 807,
+          height: 355,
+          aspectRatio: "807 / 355",
+        },
+        {
+          src: "/screenshots/qoldanba/dashboard-week-schedule-page.png",
+          alt: "Qoldanba weekly schedule screenshot",
+          label: "Weekly schedule",
+          width: 1920,
+          height: 1080,
+          aspectRatio: "1920 / 1080",
+        },
+      ],
       details: [
         "Built a student-focused dashboard for schedule and deadline access.",
         "Implemented authentication for student accounts.",
@@ -83,11 +116,20 @@ export const cvData = {
     },
     {
       name: "Shaqr",
-      summary:
-        "Web platform for creating and managing online invitations.",
+      summary: "Web platform for creating and managing online invitations.",
       href: "https://github.com/arlan-6/invites",
       website: "https://invitestry2.vercel.app/",
       stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, MongoDB, Better Auth",
+      screenshots: [
+        {
+          src: "/screenshots/shaqr/home-page.png",
+          alt: "Shaqr invitation platform screenshot",
+          label: "Invitation builder",
+          width: 1440,
+          height: 1000,
+          aspectRatio: "1440 / 1000",
+        },
+      ],
       details: [
         "Built invitation creation flows for saving event details online.",
         "Configured account authentication with Better Auth.",

@@ -1,4 +1,4 @@
-import { IconBrandTelegram } from "@tabler/icons-react";
+import { IconBrandTelegram, IconDownload } from "@tabler/icons-react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { sectionItems, type SectionId } from "@/components/portfolio/constants";
@@ -20,6 +20,7 @@ export function SiteHeader({
   onSectionClick,
 }: SiteHeaderProps) {
   const telegramLink = links.find((link) => link.label === "Telegram");
+  const cvHref = "/alibay-arlan-cv.pdf";
 
   return (
     <header className="sticky top-1 z-40 border-b border-border bg-background/95 backdrop-blur">
@@ -56,15 +57,26 @@ export function SiteHeader({
           ))}
         </nav>
 
-        <a
-          href={telegramLink?.href ?? `mailto:${profile.email}`}
-          target={telegramLink ? "_blank" : undefined}
-          rel={telegramLink ? "noreferrer" : undefined}
-          className={buttonVariants({ size: "sm" })}
-        >
-          <IconBrandTelegram aria-hidden="true" />
-          <span className="hidden sm:inline">Telegram</span>
-        </a>
+        <div className="flex shrink-0 items-center gap-2">
+          <a
+            href={cvHref}
+            download
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            <IconDownload aria-hidden="true" />
+            <span className="inline sm:hidden">CV</span>
+            <span className="hidden sm:inline">Download CV</span>
+          </a>
+          <a
+            href={telegramLink?.href ?? `mailto:${profile.email}`}
+            target={telegramLink ? "_blank" : undefined}
+            rel={telegramLink ? "noreferrer" : undefined}
+            className={buttonVariants({ size: "sm" })}
+          >
+            <IconBrandTelegram aria-hidden="true" />
+            <span className="hidden sm:inline">Telegram</span>
+          </a>
+        </div>
       </div>
     </header>
   );
