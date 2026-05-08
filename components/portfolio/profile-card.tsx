@@ -18,7 +18,6 @@ type ProfileCardProps = {
   languages: CvData["languages"];
   links: CvData["links"];
   profile: CvData["profile"];
-  skills: CvData["skills"];
   onCopyEmail: () => void;
 };
 
@@ -27,19 +26,15 @@ export function ProfileCard({
   languages,
   links,
   profile,
-  skills,
   onCopyEmail,
 }: ProfileCardProps) {
   const telegramLink = links.find((link) => link.label === "Telegram");
-  const languageSkills = skills.slice(0, 5);
-  const frontendSkills = skills.slice(5, 9);
-  const backendSkills = skills.slice(9);
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="w-[calc(100vw-2rem)] max-w-full min-w-0 overflow-hidden lg:w-auto">
       <CardContent className="p-0">
         <div className="border-b border-border bg-muted/30 p-5 sm:p-6">
-          <div className="mb-5 flex items-center justify-between gap-3">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <Badge variant="muted">Open to internships</Badge>
             <span className="rounded-md border border-border bg-background px-2.5 py-1 text-xs font-medium text-muted-foreground">
               Astana
@@ -61,7 +56,7 @@ export function ProfileCard({
         </div>
 
         <div className="space-y-5 p-5 sm:p-6">
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-3">
             {links.map((link) => {
               const Icon =
                 socialIcons[link.label as keyof typeof socialIcons] ?? IconMail;
@@ -72,9 +67,12 @@ export function ProfileCard({
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-lg border border-border bg-background px-2 py-2 text-center text-xs font-medium transition hover:bg-muted/50"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1 rounded-lg border border-border bg-background px-2 py-2 text-center text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5 hover:shadow-sm hover:shadow-primary/10"
                 >
-                  <Icon aria-hidden="true" className="size-4" />
+                  <Icon
+                    aria-hidden="true"
+                    className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5"
+                  />
                   <span className="max-w-full truncate">{link.label}</span>
                 </a>
               );
@@ -133,47 +131,22 @@ export function ProfileCard({
               <IconCopy aria-hidden="true" />
             </Button>
           </div>
-
           <Separator />
 
-          <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              Skills
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Spoken Languages
             </p>
-            <SkillGroup label="Programming" skills={languageSkills} variant="muted" />
-            <SkillGroup label="Frontend" skills={frontendSkills} variant="accent" />
-            {backendSkills.length > 0 ? (
-              <SkillGroup label="Tools & Data" skills={backendSkills} variant="muted" />
-            ) : null}
-            <SkillGroup
-              label="Spoken Languages"
-              skills={languages}
-              variant="muted"
-            />
+            <div className="flex flex-wrap gap-2">
+              {languages.map((language) => (
+                <Badge key={language} variant="muted">
+                  {language}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
       </CardContent>
     </Card>
-  );
-}
-
-type SkillGroupProps = {
-  label: string;
-  skills: readonly string[];
-  variant: "accent" | "muted";
-};
-
-function SkillGroup({ label, skills, variant }: SkillGroupProps) {
-  return (
-    <div>
-      <p className="mb-2 text-xs font-medium text-muted-foreground">{label}</p>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <Badge key={skill} variant={variant}>
-            {skill}
-          </Badge>
-        ))}
-      </div>
-    </div>
   );
 }

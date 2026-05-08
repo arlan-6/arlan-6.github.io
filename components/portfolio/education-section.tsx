@@ -25,7 +25,7 @@ export function EducationSection({
         </div>
         <div className="flex items-center gap-3 rounded-lg border border-border bg-muted/40 px-4 py-3">
           <IconSchool aria-hidden="true" className="size-5 text-muted-foreground" />
-          <span className="text-sm font-medium">{education.period}</span>
+          <span className="text-sm font-medium">Current program</span>
         </div>
       </div>
 

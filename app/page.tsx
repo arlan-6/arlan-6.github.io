@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { AboutSection } from "@/components/portfolio/about-section";
+import { CapabilitiesSection } from "@/components/portfolio/capabilities-section";
 import {
   sectionItems,
   type SectionId,
@@ -13,19 +14,21 @@ import { ProfileCard } from "@/components/portfolio/profile-card";
 import { ProgressBar } from "@/components/portfolio/progress-bar";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SiteHeader } from "@/components/portfolio/site-header";
+import { SkillsSection } from "@/components/portfolio/skills-section";
 import { StructuredData } from "@/components/portfolio/structured-data";
 import { cvData } from "@/lib/cv-data";
 
 export default function Home() {
   const {
     profile,
-    skills,
+    skillGroups,
     educationHistory,
     projects,
     education,
     links,
     languages,
     summary,
+    capabilities,
   } = cvData;
   const [activeSection, setActiveSection] = useState<SectionId>(
     sectionItems[0].id,
@@ -118,19 +121,20 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <section className="grid gap-6 lg:grid-cols-[minmax(280px,340px)_1fr]">
-          <aside className="lg:sticky lg:top-24 lg:h-fit">
+          <aside className="min-w-0 lg:sticky lg:top-24 lg:h-fit">
             <ProfileCard
               copiedEmail={copiedEmail}
               languages={languages}
               links={links}
               profile={profile}
-              skills={skills}
               onCopyEmail={copyEmail}
             />
           </aside>
 
-          <div className="space-y-10 lg:space-y-14">
+          <div className="min-w-0 space-y-10 lg:space-y-14">
             <AboutSection links={links} profile={profile} summary={summary} />
+            <CapabilitiesSection capabilities={capabilities} />
+            <SkillsSection languages={languages} skillGroups={skillGroups} />
             <EducationSection
               education={education}
               educationHistory={educationHistory}

@@ -31,13 +31,13 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
             href={links[0]?.href}
             target="_blank"
             rel="noreferrer"
-            className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition hover:-translate-y-0.5 hover:bg-muted/30 hover:shadow-sm"
+            className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10"
           >
             <span className="flex items-center justify-between gap-3 text-sm font-semibold">
               Code
               <IconArrowUpRight
                 aria-hidden="true"
-                className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="size-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
@@ -46,17 +46,17 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition hover:-translate-y-0.5 hover:bg-muted/30 hover:shadow-sm"
+            className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10"
           >
             <span className="flex items-center justify-between gap-3 text-sm font-semibold">
               Availability
               <IconArrowUpRight
                 aria-hidden="true"
-                className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="size-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-              Open to internships, freelance work, and collaborations.
+              Open to internships and junior web developer opportunities.
             </span>
           </a>
         </div>

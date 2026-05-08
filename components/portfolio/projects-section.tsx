@@ -29,8 +29,12 @@ export function ProjectsSection({
           Projects
         </p>
         <h2 className="mt-2 font-heading text-3xl tracking-tight">
-          Selected Builds
+          Selected builds with proof
         </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
+          Each project includes a live demo, source code, the product problem,
+          and the parts I built.
+        </p>
       </div>
 
       <div className="grid gap-3">
@@ -40,7 +44,7 @@ export function ProjectsSection({
           return (
             <article
               key={project.name}
-              className="rounded-lg border border-border bg-card text-card-foreground"
+              className="group rounded-lg border border-border bg-card text-card-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10"
             >
               <button
                 type="button"
@@ -60,11 +64,11 @@ export function ProjectsSection({
                     {project.summary}
                   </span>
                 </span>
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-200 group-hover:border-primary/40 group-hover:bg-primary/5 group-hover:text-foreground">
                   <IconChevronDown
                     aria-hidden="true"
                     className={cn(
-                      "size-5 transition",
+                      "size-5 transition-transform duration-200",
                       isExpanded && "rotate-180",
                     )}
                   />
@@ -88,7 +92,7 @@ export function ProjectsSection({
                       >
                         {project.stack}
                       </Badge>
-                      <div className="">
+                      <div className="flex flex-wrap gap-2">
                         <a
                           href={project.website}
                           target="_blank"
@@ -97,8 +101,10 @@ export function ProjectsSection({
                             variant: "outline",
                             size: "xs",
                           })}
+                          aria-label={`${project.name} live demo`}
                         >
                           <IconGlobe aria-hidden="true" />
+                          Live Demo
                         </a>
                         <a
                           href={project.href}
