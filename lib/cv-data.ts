@@ -7,37 +7,54 @@ export const cvData = {
     location: "Astana, Kazakhstan",
     email: "arlanhan1997@gmail.com",
     phone: "+7 707 259 6137",
+    targetPosition: "Frontend Developer Intern / Junior Web Developer",
     tagline:
-      "I build clear, user-friendly, and scalable web applications with React and Next.js.",
+      "I build practical web applications with React, Next.js, and TypeScript.",
   },
   links: [
     { label: "GitHub", href: "https://github.com/arlan-6" },
-    { label: "Telegram", href: "https://t.me/ArLaN_XD" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/arlan-alibai-83b550286/",
     },
+    { label: "Telegram", href: "https://t.me/ArLaN_XD" },
   ],
   skillGroups: [
     {
-      label: "Strongest",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      label: "Frontend",
+      skills: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+      ],
       variant: "accent",
     },
     {
-      label: "Used in projects",
-      skills: ["Supabase", "MongoDB", "Better Auth", "shadcn/ui"],
+      label: "Backend & Database",
+      skills: ["Supabase", "MongoDB", "Better Auth"],
+      variant: "muted",
+    },
+    {
+      label: "Tools",
+      skills: ["Git", "GitHub", "Vercel", "VS Code"],
       variant: "muted",
     },
     {
       label: "Learning",
-      skills: ["Go", "Backend development", "Data analytics"],
+      skills: ["Go", "Backend development", "API design"],
       variant: "muted",
     },
   ],
-  languages: ["Kazakh", "English", "Russian"],
+  languages: [
+    "Kazakh - Native",
+    "Russian - Fluent",
+    "English - A2/B1, technical reading",
+  ],
   summary:
-    "I am a junior web developer focused on building practical web applications with React and Next.js. I have built projects with authentication, database integration, reusable UI components, and responsive interfaces. I am currently expanding my backend skills with Go and looking for internship opportunities where I can contribute, learn, and grow in a real development team.",
+    "I build responsive web applications with React, Next.js, TypeScript, and Tailwind CSS. I focus on clean UI, reusable components, authentication, and database-connected features. Open to frontend internships and junior web developer roles.",
   capabilities: [
     "Build responsive pages from designs and mockups",
     "Create reusable React components",
@@ -46,19 +63,24 @@ export const cvData = {
     "Implement basic authentication flows",
     "Use Git and GitHub in project workflows",
   ],
+  practicalExperience: [
+    "Built and deployed full-stack web applications using Next.js, Supabase, and MongoDB.",
+    "Practiced authentication, responsive design, database integration, and reusable component development.",
+    "Deployed projects to Vercel and managed code with GitHub.",
+  ],
   educationHistory: [
     {
       period: "09/2025 - Present",
-      title: "Bachelor Student",
+      title: "BSc in Big Data Analytics",
       company: "Astana IT University",
       points: [
-        "Studying Big Data Analytics with coursework in data analysis, programming, databases, and information processing methods.",
-        "Continuing frontend practice with React, Next.js, Tailwind CSS, and shadcn/ui.",
+        "Coursework: programming, databases, data analysis, information processing.",
+        "Continuing frontend practice with React, Next.js, Tailwind CSS.",
       ],
     },
     {
       period: "09/2021 - 06/2025",
-      title: "Software Development Student",
+      title: "Software Development",
       company: "Innovative Technical College",
       points: [
         "Completed training in software development, programming, databases, and web technologies.",
@@ -69,10 +91,12 @@ export const cvData = {
   projects: [
     {
       name: "Qoldanba",
-      summary: "Student service platform for viewing schedules and deadlines.",
+      subtitle: "Student Dashboard",
+      summary:
+        "A web platform for students to view schedules, deadlines, and academic information.",
       href: "https://github.com/arlan-6/qoldanba",
       website: "https://qoldanba.vercel.app",
-      stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, Supabase",
+      stack: "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Supabase",
       screenshots: [
         {
           src: "/screenshots/qoldanba/home-page.png",
@@ -108,18 +132,30 @@ export const cvData = {
         },
       ],
       details: [
-        "Built a student-focused dashboard for schedule and deadline access.",
-        "Implemented authentication for student accounts.",
-        "Connected schedule and deadline records to Supabase-backed storage.",
-        "Created reusable responsive UI components with Tailwind CSS and shadcn/ui.",
+        "Built responsive dashboard pages with Next.js and Tailwind CSS.",
+        "Connected schedule and deadline data using Supabase.",
+        "Implemented authentication and protected routes.",
+        "Created reusable UI components with shadcn/ui.",
       ],
+      caseStudy: {
+        problem:
+          "Students need a simple way to check schedules and deadlines.",
+        solution:
+          "Built a dashboard with authentication, database-connected schedule data, and responsive pages.",
+        role:
+          "Frontend development, UI design, authentication setup, and database integration.",
+        learned:
+          "Protected routes, reusable components, database queries, and responsive layout.",
+      },
     },
     {
       name: "Shaqr",
-      summary: "Web platform for creating and managing online invitations.",
+      subtitle: "Online Invitation Platform",
+      summary:
+        "A full-stack web app for creating and sharing digital invitations.",
       href: "https://github.com/arlan-6/invites",
       website: "https://invitestry2.vercel.app/",
-      stack: "Next.js, React.js, Tailwind CSS, shadcn/ui, MongoDB, Better Auth",
+      stack: "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, MongoDB, Better Auth",
       screenshots: [
         {
           src: "/screenshots/shaqr/home-page.png",
@@ -131,11 +167,21 @@ export const cvData = {
         },
       ],
       details: [
-        "Built invitation creation flows for saving event details online.",
-        "Configured account authentication with Better Auth.",
-        "Stored invitation content persistently with MongoDB.",
-        "Designed responsive form and preview interfaces for invitation pages.",
+        "Built invitation creation and preview pages.",
+        "Stored invitation data using MongoDB.",
+        "Added user authentication with Better Auth.",
+        "Designed responsive UI for mobile and desktop users.",
       ],
+      caseStudy: {
+        problem:
+          "Event organizers need a simple way to create and share invitations online.",
+        solution:
+          "Built a full-stack invitation flow with persistent event data and responsive preview pages.",
+        role:
+          "Frontend development, form flow implementation, authentication, and database integration.",
+        learned:
+          "Form state, preview layouts, MongoDB persistence, and Better Auth integration.",
+      },
     },
   ],
   education: {

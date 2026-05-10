@@ -24,7 +24,6 @@ export default function Home() {
     skillGroups,
     educationHistory,
     projects,
-    education,
     links,
     languages,
     summary,
@@ -34,7 +33,6 @@ export default function Home() {
     sectionItems[0].id,
   );
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [expandedProject, setExpandedProject] = useState(0);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   useEffect(() => {
@@ -107,7 +105,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <StructuredData links={links} profile={profile} projects={projects} />
       <ProgressBar value={scrollProgress} />
 
@@ -120,7 +118,7 @@ export default function Home() {
       />
 
       <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <section className="grid gap-6 lg:grid-cols-[minmax(280px,340px)_1fr]">
+        <section className="grid min-w-0 gap-6 lg:grid-cols-[minmax(280px,340px)_1fr]">
           <aside className="min-w-0 lg:sticky lg:top-24 lg:h-fit">
             <ProfileCard
               copiedEmail={copiedEmail}
@@ -133,17 +131,10 @@ export default function Home() {
 
           <div className="min-w-0 space-y-10 lg:space-y-14">
             <AboutSection links={links} profile={profile} summary={summary} />
-            <CapabilitiesSection capabilities={capabilities} />
+            <ProjectsSection projects={projects} />
             <SkillsSection languages={languages} skillGroups={skillGroups} />
-            <EducationSection
-              education={education}
-              educationHistory={educationHistory}
-            />
-            <ProjectsSection
-              expandedProject={expandedProject}
-              projects={projects}
-              onExpandedProjectChange={setExpandedProject}
-            />
+            <CapabilitiesSection capabilities={capabilities} />
+            <EducationSection educationHistory={educationHistory} />
             <ConnectSection links={links} profile={profile} />
           </div>
         </section>

@@ -1,5 +1,11 @@
-import { IconArrowUpRight } from "@tabler/icons-react";
+import {
+  IconArrowRight,
+  IconBriefcase,
+  IconDownload,
+  IconMail,
+} from "@tabler/icons-react";
 
+import { buttonVariants } from "@/components/ui/button";
 import type { CvData } from "@/lib/cv-data";
 
 type AboutSectionProps = {
@@ -15,16 +21,40 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
       className="scroll-mt-24 border-b border-border pb-10 sm:pb-12"
     >
       <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-        About
+        {profile.targetPosition}
       </p>
-      <div className="grid gap-6 xl:grid-cols-[1fr_260px]">
-        <div>
-          <h2 className="max-w-4xl font-heading text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Building polished interfaces with practical engineering.
+      <div className="grid min-w-0 gap-6 xl:grid-cols-[1fr_260px]">
+        <div className="min-w-0">
+          <h2 className="max-w-full break-words font-heading text-3xl leading-[1.08] tracking-tight sm:max-w-4xl sm:text-5xl lg:text-6xl">
+            Junior Frontend Developer
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
             {summary}
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className={buttonVariants({ variant: "default", size: "lg" })}
+            >
+              <IconBriefcase aria-hidden="true" />
+              View Projects
+            </a>
+            <a
+              href="/alibay-arlan-cv.pdf"
+              download
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              <IconDownload aria-hidden="true" />
+              Download CV
+            </a>
+            <a
+              href="#connect"
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              <IconMail aria-hidden="true" />
+              Contact Me
+            </a>
+          </div>
         </div>
         <div className="grid content-start gap-2 sm:grid-cols-3 xl:grid-cols-1">
           <a
@@ -35,9 +65,9 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
           >
             <span className="flex items-center justify-between gap-3 text-sm font-semibold">
               Code
-              <IconArrowUpRight
+              <IconArrowRight
                 aria-hidden="true"
-                className="size-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="size-4 transition-transform duration-200 group-hover:translate-x-1"
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
@@ -49,14 +79,14 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
             className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10"
           >
             <span className="flex items-center justify-between gap-3 text-sm font-semibold">
-              Availability
-              <IconArrowUpRight
+              Currently looking for
+              <IconArrowRight
                 aria-hidden="true"
-                className="size-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="size-4 transition-transform duration-200 group-hover:translate-x-1"
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-              Open to internships and junior web developer opportunities.
+              Frontend Developer Internship or Junior Web Developer role.
             </span>
           </a>
         </div>

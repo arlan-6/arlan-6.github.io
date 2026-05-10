@@ -33,7 +33,7 @@ export function ProfileCard({
   const cvHref = "/alibay-arlan-cv.pdf";
 
   return (
-    <Card className="w-[calc(100vw-2rem)] max-w-full min-w-0 overflow-hidden lg:w-auto">
+    <Card className="w-[calc(100vw_-_2rem)] max-w-full min-w-0 overflow-hidden lg:w-full">
       <CardContent className="p-0">
         <div className="border-b border-border bg-muted/30 p-5 sm:p-6">
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">

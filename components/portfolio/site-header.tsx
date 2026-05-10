@@ -61,17 +61,19 @@ export function SiteHeader({
           <a
             href={cvHref}
             download
+            aria-label="Download CV"
             className={buttonVariants({ variant: "outline", size: "sm" })}
           >
             <IconDownload aria-hidden="true" />
-            <span className="inline sm:hidden">CV</span>
-            <span className="hidden sm:inline">Download CV</span>
           </a>
           <a
             href={telegramLink?.href ?? `mailto:${profile.email}`}
             target={telegramLink ? "_blank" : undefined}
             rel={telegramLink ? "noreferrer" : undefined}
-            className={buttonVariants({ size: "sm" })}
+            className={buttonVariants({
+              size: "sm",
+              className: "hidden sm:inline-flex",
+            })}
           >
             <IconBrandTelegram aria-hidden="true" />
             <span className="hidden sm:inline">Telegram</span>

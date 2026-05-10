@@ -15,16 +15,15 @@ export default function CvPage() {
     skillGroups,
     languages,
     summary,
-    capabilities,
+    practicalExperience,
     educationHistory,
     projects,
-    education,
   } = cvData;
 
   return (
-    <main className="min-h-screen bg-white px-8 py-10 text-black print:min-h-0 print:p-0">
+    <main className="min-h-screen bg-white px-8 py-12 text-black print:min-h-0 print:p-0">
       <article className="mx-auto max-w-4xl bg-white print:max-w-none">
-        <header className="border-b border-gray-300 pb-5">
+        <header className="border-b border-gray-300 pb-7">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
             {profile.role}
           </p>
@@ -32,85 +31,36 @@ export default function CvPage() {
             {profile.latinName}
           </h1>
           <p className="mt-1 text-sm text-gray-600">{profile.name}</p>
-          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-700">
+          <p className="mt-3 text-sm font-semibold text-gray-800">
+            Target: {profile.targetPosition}
+          </p>
+          <div className="mt-3 text-sm text-gray-700">
             <span>{profile.location}</span>
-            <span>{profile.email}</span>
+            <span aria-hidden="true"> · </span>
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <span aria-hidden="true"> · </span>
             <span>{profile.phone}</span>
           </div>
-          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-700">
-            {links.map((link) => (
-              <a key={link.href} href={link.href}>
-                {link.label}: {link.href.replace(/^https?:\/\//, "")}
-              </a>
+          <div className="mt-1 mb-5 text-sm text-gray-700">
+            {links.map((link, index) => (
+              <span key={link.href}>
+                <a href={link.href}>{link.label}</a>
+                {index < links.length - 1 ? (
+                  <span aria-hidden="true"> · </span>
+                ) : null}
+              </span>
             ))}
           </div>
         </header>
 
-        <section className="grid gap-8 py-6 md:grid-cols-[1.4fr_0.8fr] print:grid-cols-[1.4fr_0.8fr]">
-          <div className="space-y-6">
+        <section className="grid gap-9 py-9">
+          <div className="space-y-10 print:space-y-8">
             <CvSection title="Profile">
               <p className="text-sm leading-6 text-gray-700">{summary}</p>
             </CvSection>
 
-            <CvSection title="Projects">
-              <div className="space-y-4">
-                {projects.map((project) => (
-                  <div key={project.name}>
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="text-base font-semibold">
-                        {project.name}
-                      </h3>
-                      <p className="text-xs text-gray-500">
-                        {project.website.replace(/^https?:\/\//, "")}
-                      </p>
-                    </div>
-                    <p className="mt-1 text-sm text-gray-700">
-                      {project.summary}
-                    </p>
-                    <p className="mt-1 text-xs font-medium text-gray-600">
-                      {project.stack}
-                    </p>
-                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
-                      {project.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </CvSection>
-
-            <CvSection title="Education">
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-base font-semibold">
-                    {education.degree}
-                  </h3>
-                  <p className="text-sm text-gray-700">
-                    {education.school} · {education.period}
-                  </p>
-                </div>
-                {educationHistory.map((item) => (
-                  <div key={`${item.company}-${item.period}`}>
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="text-sm font-semibold">{item.title}</h3>
-                      <p className="text-xs text-gray-500">{item.period}</p>
-                    </div>
-                    <p className="text-sm text-gray-700">{item.company}</p>
-                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
-                      {item.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </CvSection>
-          </div>
-
-          <aside className="space-y-6">
             <CvSection title="Skills">
-              <div className="space-y-3">
+              <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 print:grid-cols-2">
                 {skillGroups.map((group) => (
                   <div key={group.label}>
                     <h3 className="text-sm font-semibold">{group.label}</h3>
@@ -122,20 +72,79 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="What I can do">
+            <CvSection title="Projects">
+              <div className="space-y-6 print:space-y-5">
+                {projects.map((project) => (
+                  <div key={project.name} className="break-inside-avoid">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-base font-semibold">
+                        {project.name} — {project.subtitle}
+                      </h3>
+                    </div>
+                    <p className="mt-1 text-sm text-gray-700">
+                      {project.summary}
+                    </p>
+                    <p className="mt-1 text-xs font-medium text-gray-600">
+                      Tech: {project.stack}
+                    </p>
+                    <p className="mt-1 text-xs text-gray-600">
+                      <a href={project.website}>
+                        Live Demo: {project.website.replace(/^https?:\/\//, "")}
+                      </a>
+                      <span aria-hidden="true"> · </span>
+                      <a href={project.href}>
+                        GitHub: {project.href.replace(/^https?:\/\//, "")}
+                      </a>
+                    </p>
+                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-1">
+                      {project.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </CvSection>
+
+            <CvSection title="Practical Experience">
               <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
-                {capabilities.map((capability) => (
-                  <li key={capability}>{capability}</li>
+                {practicalExperience.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </CvSection>
 
-            <CvSection title="Languages">
-              <p className="text-sm leading-6 text-gray-700">
-                {languages.join(", ")}
-              </p>
+            <CvSection title="Education">
+              <div className="space-y-5 print:space-y-4">
+                {educationHistory.map((item) => (
+                  <div
+                    key={`${item.company}-${item.period}`}
+                    className="break-inside-avoid"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-base font-semibold">
+                        {item.company} — {item.title}
+                      </h3>
+                      <p className="text-xs text-gray-500">{item.period}</p>
+                    </div>
+                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-1">
+                      {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </CvSection>
-          </aside>
+
+            <CvSection title="Languages">
+              <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
+                {languages.map((language) => (
+                  <li key={language}>{language}</li>
+                ))}
+              </ul>
+            </CvSection>
+          </div>
         </section>
       </article>
     </main>
@@ -150,8 +159,8 @@ function CvSection({
   title: string;
 }>) {
   return (
-    <section>
-      <h2 className="mb-3 border-b border-gray-200 pb-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
+    <section className="break-inside-avoid">
+      <h2 className="mb-5 border-b border-gray-200 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 print:mb-4">
         {title}
       </h2>
       {children}

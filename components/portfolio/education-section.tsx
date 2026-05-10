@@ -3,14 +3,10 @@ import { IconSchool } from "@tabler/icons-react";
 import type { CvData } from "@/lib/cv-data";
 
 type EducationSectionProps = {
-  education: CvData["education"];
   educationHistory: CvData["educationHistory"];
 };
 
-export function EducationSection({
-  education,
-  educationHistory,
-}: EducationSectionProps) {
+export function EducationSection({ educationHistory }: EducationSectionProps) {
   return (
     <section id="education" className="scroll-mt-24">
       <div className="mb-5 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
@@ -19,12 +15,18 @@ export function EducationSection({
             Education
           </p>
           <h2 className="mt-3 font-heading text-2xl tracking-tight">
-            {education.degree}
+            Academic background
           </h2>
-          <p className="mt-2 text-muted-foreground">{education.school}</p>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+            Programming, databases, web technologies, and Big Data Analytics
+            coursework.
+          </p>
         </div>
         <div className="flex items-center gap-3 rounded-lg border border-border bg-muted/40 px-4 py-3">
-          <IconSchool aria-hidden="true" className="size-5 text-muted-foreground" />
+          <IconSchool
+            aria-hidden="true"
+            className="size-5 text-muted-foreground"
+          />
           <span className="text-sm font-medium">Current program</span>
         </div>
       </div>
@@ -40,11 +42,8 @@ export function EducationSection({
             </p>
             <div>
               <h3 className="font-heading text-xl tracking-tight">
-                {item.title}
+                {item.company} — {item.title}
               </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {item.company}
-              </p>
               <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
                 {item.points.map((point) => (
                   <li key={point} className="flex gap-3">

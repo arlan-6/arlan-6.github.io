@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import {
+  IconBrandGithub,
+  IconBrandLinkedin,
   IconBrandTelegram,
   IconCheck,
   IconCopy,
@@ -44,6 +46,8 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
   const [selected, setSelected] = useState<ConversationId>("internship");
   const [message, setMessage] = useState<string>(conversationOptions[0].message);
   const [copied, setCopied] = useState(false);
+  const githubLink = links.find((link) => link.label === "GitHub");
+  const linkedInLink = links.find((link) => link.label === "LinkedIn");
   const telegramLink = links.find((link) => link.label === "Telegram");
   const selectedOption = useMemo(
     () => conversationOptions.find((option) => option.id === selected),
@@ -88,6 +92,10 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
           <h2 className="mt-2 font-heading text-3xl tracking-tight">
             Start a Conversation
           </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
+            Interested in working together or discussing an internship
+            opportunity? Contact me by email, Telegram, or LinkedIn.
+          </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
             {conversationOptions.map((option) => {
@@ -129,11 +137,22 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
 
         <div className="flex flex-col justify-end gap-2">
           <a
+            href={emailHref}
+            className={buttonVariants({
+              variant: "default",
+              size: "lg",
+              className: "w-full",
+            })}
+          >
+            <IconMail aria-hidden="true" />
+            Email Me
+          </a>
+          <a
             href={telegramHref ?? emailHref}
             target={telegramHref ? "_blank" : undefined}
             rel={telegramHref ? "noreferrer" : undefined}
             className={buttonVariants({
-              variant: "default",
+              variant: "outline",
               size: "lg",
               className: "w-full",
             })}
@@ -141,17 +160,36 @@ export function ConnectSection({ links, profile }: ConnectSectionProps) {
             <IconBrandTelegram aria-hidden="true" />
             Telegram
           </a>
-          <a
-            href={emailHref}
-            className={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              className: "w-full",
-            })}
-          >
-            <IconMail aria-hidden="true" />
-            Email
-          </a>
+          {linkedInLink ? (
+            <a
+              href={linkedInLink.href}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({
+                variant: "outline",
+                size: "lg",
+                className: "w-full",
+              })}
+            >
+              <IconBrandLinkedin aria-hidden="true" />
+              LinkedIn
+            </a>
+          ) : null}
+          {githubLink ? (
+            <a
+              href={githubLink.href}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({
+                variant: "outline",
+                size: "lg",
+                className: "w-full",
+              })}
+            >
+              <IconBrandGithub aria-hidden="true" />
+              GitHub
+            </a>
+          ) : null}
           <Button
             type="button"
             variant="ghost"
