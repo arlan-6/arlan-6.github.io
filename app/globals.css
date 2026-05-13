@@ -150,3 +150,28 @@
     scroll-behavior: auto;
   }
 }
+
+@page {
+  size: A4;
+  margin: 0.25in;
+}
+
+@media print {
+  .cv-print-page h1 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .cv-print-page h3 {
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .cv-print-page p,
+  .cv-print-page li,
+  .cv-print-page a,
+  .cv-print-page span {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+}

@@ -9,7 +9,7 @@ export const cvData = {
     phone: "+7 707 259 6137",
     targetPosition: "Frontend Developer Intern / Junior Web Developer",
     tagline:
-      "I build practical web applications with React, Next.js, and TypeScript.",
+      "React, Next.js, TypeScript, and full-stack web applications.",
   },
   links: [
     { label: "GitHub", href: "https://github.com/arlan-6" },
@@ -33,18 +33,25 @@ export const cvData = {
       variant: "accent",
     },
     {
-      label: "Backend & Database",
-      skills: ["Supabase", "MongoDB", "Better Auth"],
+      label: "Backend & Databases",
+      skills: [
+        "Supabase",
+        "MongoDB",
+        "Better Auth",
+        "REST API basics",
+        "CRUD flows",
+        "Database schema",
+      ],
       variant: "muted",
     },
     {
       label: "Tools",
-      skills: ["Git", "GitHub", "Vercel", "VS Code"],
+      skills: ["Git", "GitHub", "Vercel", "Deployment", "VS Code"],
       variant: "muted",
     },
     {
       label: "Learning",
-      skills: ["Go", "Backend development", "API design"],
+      skills: ["Go", "Backend development", "API design", "Data analytics"],
       variant: "muted",
     },
   ],
@@ -54,44 +61,39 @@ export const cvData = {
     "English - B1/B2, technical reading",
   ],
   summary:
-    "I build responsive web applications with React, Next.js, TypeScript, and Tailwind CSS. I focus on clean UI, reusable components, authentication, and database-connected features. Open to frontend internships and junior web developer roles.",
+    "Junior Web Developer based in Astana, focused on React, Next.js, TypeScript, and practical full-stack web applications. Built live projects with authentication, database integration, reusable UI components, responsive layouts, and Vercel deployment. Currently expanding backend skills with Go and seeking internship or junior developer opportunities in Astana or remote teams.",
   capabilities: [
     "Build responsive pages from designs and mockups",
-    "Create reusable React components",
-    "Work with Next.js routing and layouts",
-    "Connect apps to databases using Supabase or MongoDB",
-    "Implement basic authentication flows",
-    "Use Git and GitHub in project workflows",
+    "Create reusable React and shadcn/ui components",
+    "Work with Next.js routing, layouts, and frontend architecture",
+    "Connect apps to Supabase or MongoDB-backed data",
+    "Implement protected routes and account authentication flows",
+    "Use Git, GitHub, and Vercel in deployment workflows",
   ],
-  practicalExperience: [
-    "Built and deployed full-stack web applications using Next.js, Supabase, and MongoDB.",
-    "Practiced authentication, responsive design, database integration, and reusable component development.",
-    "Deployed projects to Vercel and managed code with GitHub.",
-  ],
+  practicalExperience: {
+    title: "Independent Web Developer / Student Projects",
+    period: "2024 - Present",
+    points: [
+      "Built and deployed full-stack web applications using Next.js, TypeScript, Supabase, MongoDB, and Vercel.",
+      "Owned routing, responsive UI, reusable components, authentication flows, and database-connected CRUD features.",
+      "Maintained source code on GitHub with live demos, project screenshots, and public repositories.",
+    ],
+  },
   educationHistory: [
     {
       period: "09/2025 - Present",
-      title: "BSc in Big Data Analytics",
-      company: "Astana IT University",
+      title: "Bachelor's Degree in Big Data Analytics",
+      company: "Astana IT University, Astana",
       points: [
         "Coursework: programming, databases, data analysis, information processing.",
         "Continuing frontend practice with React, Next.js, Tailwind CSS.",
-      ],
-    },
-    {
-      period: "09/2021 - 06/2025",
-      title: "Software Development",
-      company: "Innovative Technical College",
-      points: [
-        "Completed training in software development, programming, databases, and web technologies.",
-        "Built practical projects as part of technical coursework.",
       ],
     },
   ],
   projects: [
     {
       name: "Qoldanba",
-      subtitle: "Student Dashboard",
+      subtitle: "Student Service Platform",
       summary:
         "A web platform for students to view schedules, deadlines, and academic information.",
       href: "https://github.com/arlan-6/qoldanba",
@@ -132,25 +134,26 @@ export const cvData = {
         },
       ],
       details: [
-        "Built responsive dashboard pages with Next.js and Tailwind CSS.",
-        "Connected schedule and deadline data using Supabase.",
-        "Implemented authentication and protected routes.",
-        "Created reusable UI components with shadcn/ui.",
+        "Built a student dashboard for viewing academic schedules, deadlines, and academic resources.",
+        "Implemented Supabase authentication with protected routes for separate student account access.",
+        "Connected schedule and deadline data to Supabase-backed storage and structured database records.",
+        "Created reusable responsive UI components using Tailwind CSS and shadcn/ui.",
+        "Deployed the application on Vercel and maintained source code through GitHub.",
       ],
       caseStudy: {
         problem:
           "Students need a simple way to check schedules and deadlines.",
         solution:
-          "Built a dashboard with authentication, database-connected schedule data, and responsive pages.",
+          "Built a dashboard with protected access, Supabase-backed schedule data, and responsive pages.",
         role:
-          "Frontend development, UI design, authentication setup, and database integration.",
+          "Frontend development, UI design, authentication setup, database integration, and deployment.",
         learned:
-          "Protected routes, reusable components, database queries, and responsive layout.",
+          "Protected routes, reusable components, database records, responsive layout, and deployment workflow.",
       },
     },
     {
       name: "Shaqr",
-      subtitle: "Online Invitation Platform",
+      subtitle: "Online Invitation Management Platform",
       summary:
         "A full-stack web app for creating and sharing digital invitations.",
       href: "https://github.com/arlan-6/invites",
@@ -167,16 +170,17 @@ export const cvData = {
         },
       ],
       details: [
-        "Built invitation creation and preview pages.",
-        "Stored invitation data using MongoDB.",
-        "Added user authentication with Better Auth.",
-        "Designed responsive UI for mobile and desktop users.",
+        "Built a web platform for creating, managing, and sharing online invitations.",
+        "Developed event detail forms, invitation preview pages, and responsive UI flows.",
+        "Configured account authentication with Better Auth.",
+        "Stored invitation data persistently using MongoDB.",
+        "Designed reusable interface components for form and preview sections.",
       ],
       caseStudy: {
         problem:
           "Event organizers need a simple way to create and share invitations online.",
         solution:
-          "Built a full-stack invitation flow with persistent event data and responsive preview pages.",
+          "Built a multi-step invitation creation flow with persistent event data, account authentication, and responsive preview pages.",
         role:
           "Frontend development, form flow implementation, authentication, and database integration.",
         learned:
@@ -184,11 +188,6 @@ export const cvData = {
       },
     },
   ],
-  education: {
-    school: "Astana IT University (AITU)",
-    degree: "Bachelor's Degree in Big Data Analytics",
-    period: "09/2025 - Present",
-  },
 } as const;
 
 export type CvData = typeof cvData;

@@ -17,11 +17,11 @@ export function SkillsSection({ languages, skillGroups }: SkillsSectionProps) {
           Skills
         </p>
         <h2 className="mt-2 font-heading text-3xl tracking-tight">
-          Tools I can contribute with
+          Technical skills
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Grouped by confidence and practical use, so recruiters can quickly see
-          what I use most and what I am still building.
+          Frontend, backend, database, and deployment tools I use in live
+          projects and continue to build on.
         </p>
       </div>
 

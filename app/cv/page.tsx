@@ -21,9 +21,9 @@ export default function CvPage() {
   } = cvData;
 
   return (
-    <main className="min-h-screen bg-white px-8 py-12 text-black print:min-h-0 print:p-0">
-      <article className="mx-auto max-w-4xl bg-white print:max-w-none">
-        <header className="border-b border-gray-300 pb-7">
+    <main className="min-h-screen bg-white px-8 py-9 text-black print:min-h-0 print:p-0">
+      <article className="cv-print-page mx-auto max-w-4xl bg-white print:max-w-none">
+        <header className="border-b border-gray-300 pb-5 print:pb-3">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
             {profile.role}
           </p>
@@ -41,7 +41,7 @@ export default function CvPage() {
             <span aria-hidden="true"> · </span>
             <span>{profile.phone}</span>
           </div>
-          <div className="mt-1 mb-5 text-sm text-gray-700">
+          <div className="mb-3 mt-1 text-sm text-gray-700 print:mb-2">
             {links.map((link, index) => (
               <span key={link.href}>
                 <a href={link.href}>{link.label}</a>
@@ -51,20 +51,25 @@ export default function CvPage() {
               </span>
             ))}
           </div>
+          <p className="text-sm text-gray-700">
+            Languages: {languages.join("; ")}
+          </p>
         </header>
 
-        <section className="grid gap-9 py-9">
-          <div className="space-y-10 print:space-y-8">
-            <CvSection title="Profile">
-              <p className="text-sm leading-6 text-gray-700">{summary}</p>
+        <section className="grid gap-6 py-7 print:gap-4 print:py-4">
+          <div className="space-y-7 print:space-y-4">
+            <CvSection title="Professional Summary">
+              <p className="text-sm leading-6 text-gray-700 print:leading-5">
+                {summary}
+              </p>
             </CvSection>
 
-            <CvSection title="Skills">
+            <CvSection title="Technical Skills">
               <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 print:grid-cols-2">
                 {skillGroups.map((group) => (
                   <div key={group.label}>
                     <h3 className="text-sm font-semibold">{group.label}</h3>
-                    <p className="mt-1 text-sm leading-6 text-gray-700">
+                    <p className="mt-1 text-sm leading-6 text-gray-700 print:leading-5">
                       {group.skills.join(", ")}
                     </p>
                   </div>
@@ -72,8 +77,26 @@ export default function CvPage() {
               </div>
             </CvSection>
 
+            <CvSection title="Experience">
+              <div className="break-inside-avoid">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-base font-semibold">
+                    {practicalExperience.title}
+                  </h3>
+                  <p className="text-xs text-gray-500">
+                    {practicalExperience.period}
+                  </p>
+                </div>
+                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
+                  {practicalExperience.points.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </CvSection>
+
             <CvSection title="Projects">
-              <div className="space-y-6 print:space-y-5">
+              <div className="space-y-5 print:space-y-3">
                 {projects.map((project) => (
                   <div key={project.name} className="break-inside-avoid">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -81,7 +104,7 @@ export default function CvPage() {
                         {project.name} — {project.subtitle}
                       </h3>
                     </div>
-                    <p className="mt-1 text-sm text-gray-700">
+                    <p className="mt-1 text-sm text-gray-700 print:leading-5">
                       {project.summary}
                     </p>
                     <p className="mt-1 text-xs font-medium text-gray-600">
@@ -96,7 +119,7 @@ export default function CvPage() {
                         GitHub: {project.href.replace(/^https?:\/\//, "")}
                       </a>
                     </p>
-                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-1">
+                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
                       {project.details.map((detail) => (
                         <li key={detail}>{detail}</li>
                       ))}
@@ -106,16 +129,8 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Practical Experience">
-              <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
-                {practicalExperience.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </CvSection>
-
             <CvSection title="Education">
-              <div className="space-y-5 print:space-y-4">
+              <div className="space-y-4 print:space-y-2">
                 {educationHistory.map((item) => (
                   <div
                     key={`${item.company}-${item.period}`}
@@ -127,7 +142,7 @@ export default function CvPage() {
                       </h3>
                       <p className="text-xs text-gray-500">{item.period}</p>
                     </div>
-                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-1">
+                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
                       {item.points.map((point) => (
                         <li key={point}>{point}</li>
                       ))}
@@ -137,13 +152,6 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Languages">
-              <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-700">
-                {languages.map((language) => (
-                  <li key={language}>{language}</li>
-                ))}
-              </ul>
-            </CvSection>
           </div>
         </section>
       </article>
@@ -160,7 +168,7 @@ function CvSection({
 }>) {
   return (
     <section className="break-inside-avoid">
-      <h2 className="mb-5 border-b border-gray-200 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 print:mb-4">
+      <h2 className="mb-3 border-b border-gray-200 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 print:mb-2 print:pb-1">
         {title}
       </h2>
       {children}

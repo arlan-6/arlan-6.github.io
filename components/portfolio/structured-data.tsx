@@ -39,6 +39,11 @@ export function StructuredData({
         "shadcn/ui",
         "Supabase",
         "MongoDB",
+        "Better Auth",
+        "Vercel",
+        "REST API",
+        "CRUD",
+        "Responsive Design",
       ],
       hasPart: projects.map((project) => ({
         "@type": "SoftwareSourceCode",
