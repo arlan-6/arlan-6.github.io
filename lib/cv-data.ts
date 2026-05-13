@@ -51,7 +51,7 @@ export const cvData = {
   languages: [
     "Kazakh - Native",
     "Russian - Fluent",
-    "English - A2/B1, technical reading",
+    "English - B1/B2, technical reading",
   ],
   summary:
     "I build responsive web applications with React, Next.js, TypeScript, and Tailwind CSS. I focus on clean UI, reusable components, authentication, and database-connected features. Open to frontend internships and junior web developer roles.",
