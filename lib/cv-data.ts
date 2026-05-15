@@ -93,9 +93,9 @@ export const cvData = {
   projects: [
     {
       name: "Qoldanba",
-      subtitle: "Student Service Platform",
+      subtitle: "Student Adaptation Platform",
       summary:
-        "A web platform for students to view schedules, deadlines, and academic information.",
+        "A centralized platform for first-year students to view schedules, deadlines, and academic resources in one interface.",
       href: "https://github.com/arlan-6/qoldanba",
       website: "https://qoldanba.vercel.app",
       stack: "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Supabase",
@@ -134,17 +134,17 @@ export const cvData = {
         },
       ],
       details: [
-        "Built a student dashboard for viewing academic schedules, deadlines, and academic resources.",
-        "Implemented Supabase authentication with protected routes for separate student account access.",
-        "Connected schedule and deadline data to Supabase-backed storage and structured database records.",
-        "Created reusable responsive UI components using Tailwind CSS and shadcn/ui.",
-        "Deployed the application on Vercel and maintained source code through GitHub.",
+        "Developed a centralized platform for first-year students to access schedules, deadlines, and academic resources in one place.",
+        "Solved the problem of academic information being scattered across different websites and files.",
+        "Designed the platform to help new students adapt faster to university pace, deadlines, and digital tools.",
+        "Implemented authentication and protected routes using Supabase.",
+        "Built responsive UI components with Next.js, TypeScript, Tailwind CSS, and shadcn/ui.",
       ],
       caseStudy: {
         problem:
-          "Students need a simple way to check schedules and deadlines.",
+          "Academic information for first-year students is scattered across separate websites and files.",
         solution:
-          "Built a dashboard with protected access, Supabase-backed schedule data, and responsive pages.",
+          "Developed one interface for schedules, deadlines, and academic resources to help new students adapt faster to university workflows.",
         role:
           "Frontend development, UI design, authentication setup, database integration, and deployment.",
         learned:
