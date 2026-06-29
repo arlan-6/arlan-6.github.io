@@ -2,6 +2,7 @@ import {
   IconArrowRight,
   IconBriefcase,
   IconDownload,
+  IconFileCv,
   IconMail,
 } from "@tabler/icons-react";
 
@@ -15,6 +16,8 @@ type AboutSectionProps = {
 };
 
 export function AboutSection({ links, profile, summary }: AboutSectionProps) {
+  const githubLink = links.find((link) => link.label === "GitHub");
+
   return (
     <section
       id="about"
@@ -26,7 +29,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
       <div className="grid min-w-0 gap-6 xl:grid-cols-[1fr_260px]">
         <div className="min-w-0">
           <h2 className="max-w-full break-words font-heading text-3xl leading-[1.08] tracking-tight sm:max-w-4xl sm:text-5xl lg:text-6xl">
-            Junior Frontend Developer
+            Frontend Developer Intern
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
             {summary}
@@ -38,6 +41,13 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
             >
               <IconBriefcase aria-hidden="true" />
               View Projects
+            </a>
+            <a
+              href="/cv/"
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              <IconFileCv aria-hidden="true" />
+              View CV
             </a>
             <a
               href="/alibay-arlan-cv.pdf"
@@ -58,7 +68,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
         </div>
         <div className="grid content-start gap-2 sm:grid-cols-3 xl:grid-cols-1">
           <a
-            href={links[0]?.href}
+            href={githubLink?.href}
             target="_blank"
             rel="noreferrer"
             className="group rounded-lg border border-border bg-card p-4 text-card-foreground transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10"

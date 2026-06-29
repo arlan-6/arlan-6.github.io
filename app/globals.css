@@ -153,25 +153,50 @@
 
 @page {
   size: A4;
-  margin: 0.25in;
+  margin: 0.18in;
 }
 
 @media print {
+  .cv-print-page header {
+    padding-bottom: 8px !important;
+  }
+
+  .cv-print-page > section {
+    gap: 8px !important;
+    padding-bottom: 0 !important;
+    padding-top: 10px !important;
+  }
+
+  .cv-print-page > section > div {
+    gap: 10px !important;
+  }
+
   .cv-print-page h1 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 1.05;
+  }
+
+  .cv-print-page h2 {
+    font-size: 9px;
     line-height: 1.1;
+    margin-bottom: 5px !important;
+    padding-bottom: 3px !important;
   }
 
   .cv-print-page h3 {
-    font-size: 13px;
-    line-height: 1.25;
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .cv-print-page ul {
+    margin-top: 4px !important;
   }
 
   .cv-print-page p,
   .cv-print-page li,
   .cv-print-page a,
   .cv-print-page span {
-    font-size: 11px;
-    line-height: 1.35;
+    font-size: 9.5px;
+    line-height: 1.22;
   }
 }

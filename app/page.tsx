@@ -10,6 +10,7 @@ import {
 } from "@/components/portfolio/constants";
 import { ConnectSection } from "@/components/portfolio/connect-section";
 import { EducationSection } from "@/components/portfolio/education-section";
+import { LeadershipSection } from "@/components/portfolio/leadership-section";
 import { ProfileCard } from "@/components/portfolio/profile-card";
 import { ProgressBar } from "@/components/portfolio/progress-bar";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
@@ -28,6 +29,7 @@ export default function Home() {
     languages,
     summary,
     capabilities,
+    leadershipActivities,
   } = cvData;
   const [activeSection, setActiveSection] = useState<SectionId>(
     sectionItems[0].id,
@@ -132,6 +134,7 @@ export default function Home() {
           <div className="min-w-0 space-y-10 lg:space-y-14">
             <AboutSection links={links} profile={profile} summary={summary} />
             <ProjectsSection projects={projects} />
+            <LeadershipSection leadershipActivities={leadershipActivities} />
             <SkillsSection languages={languages} skillGroups={skillGroups} />
             <CapabilitiesSection capabilities={capabilities} />
             <EducationSection educationHistory={educationHistory} />

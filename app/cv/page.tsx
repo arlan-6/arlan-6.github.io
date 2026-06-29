@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { IconDownload } from "@tabler/icons-react";
 
+import { buttonVariants } from "@/components/ui/button";
 import { cvData } from "@/lib/cv-data";
 
 export const metadata: Metadata = {
@@ -18,6 +20,7 @@ export default function CvPage() {
     practicalExperience,
     educationHistory,
     projects,
+    leadershipActivities,
   } = cvData;
 
   return (
@@ -33,6 +36,9 @@ export default function CvPage() {
           <p className="mt-1 text-sm text-gray-600">{profile.name}</p>
           <p className="mt-3 text-sm font-semibold text-gray-800">
             Target: {profile.targetPosition}
+          </p>
+          <p className="mt-1 text-sm text-gray-700">
+            Availability: {profile.availability}
           </p>
           <div className="mt-3 text-sm text-gray-700">
             <span>{profile.location}</span>
@@ -51,9 +57,16 @@ export default function CvPage() {
               </span>
             ))}
           </div>
-          <p className="text-sm text-gray-700">
-            Languages: {languages.join("; ")}
-          </p>
+          <div className="mt-3 flex flex-wrap gap-2 print:hidden">
+            <a
+              href="/alibay-arlan-cv.pdf"
+              download
+              className={buttonVariants({ variant: "default", size: "sm" })}
+            >
+              <IconDownload aria-hidden="true" />
+              Download CV
+            </a>
+          </div>
         </header>
 
         <section className="grid gap-6 py-7 print:gap-4 print:py-4">
@@ -77,7 +90,7 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Experience">
+            <CvSection title="Project Experience">
               <div className="break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-base font-semibold">
@@ -129,6 +142,29 @@ export default function CvPage() {
               </div>
             </CvSection>
 
+            <CvSection title="Leadership & Activities">
+              <div className="space-y-4 print:space-y-2">
+                {leadershipActivities.map((item) => (
+                  <div
+                    key={`${item.organization}-${item.period}`}
+                    className="break-inside-avoid"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-base font-semibold">
+                        {item.title} — {item.organization}
+                      </h3>
+                      <p className="text-xs text-gray-500">{item.period}</p>
+                    </div>
+                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
+                      {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </CvSection>
+
             <CvSection title="Education">
               <div className="space-y-4 print:space-y-2">
                 {educationHistory.map((item) => (
@@ -150,6 +186,12 @@ export default function CvPage() {
                   </div>
                 ))}
               </div>
+            </CvSection>
+
+            <CvSection title="Languages">
+              <p className="text-sm leading-6 text-gray-700 print:leading-5">
+                {languages.join("; ")}
+              </p>
             </CvSection>
 
           </div>
