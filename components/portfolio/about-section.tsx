@@ -29,7 +29,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
       <div className="grid min-w-0 gap-6 xl:grid-cols-[1fr_260px]">
         <div className="min-w-0">
           <h2 className="max-w-full break-words font-heading text-3xl leading-[1.08] tracking-tight sm:max-w-4xl sm:text-5xl lg:text-6xl">
-            Frontend Developer Intern
+            {profile.role}
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
             {summary}
@@ -96,7 +96,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-              Frontend Developer Internship or Junior Web Developer role.
+              Frontend internship or junior frontend developer role.
             </span>
           </a>
         </div>

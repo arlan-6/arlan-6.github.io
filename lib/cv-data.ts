@@ -3,15 +3,15 @@ export const cvData = {
     name: "Әлібай Арлан Аханұлы",
     latinName: "Alibay Arlan Akhanuly",
     initials: "AR",
-    role: "Frontend Developer Intern / Junior Web Developer",
+    role: "Junior Frontend Developer",
     location: "Astana, Kazakhstan",
     email: "arlanhan1997@gmail.com",
     phone: "+7 707 259 6137",
-    targetPosition: "Frontend Developer Intern / Junior Web Developer",
+    targetPosition: "Frontend Internship / Junior Frontend Developer",
     tagline:
       "React, Next.js, TypeScript, and responsive web applications.",
     availability:
-      "Frontend internship, part-time during study / full-time in summer, Astana or remote",
+      "Open to frontend internships and junior opportunities in Astana or remote",
   },
   links: [
     { label: "Portfolio", href: "https://arlan-6.github.io" },
@@ -41,19 +41,18 @@ export const cvData = {
         "Supabase",
         "MongoDB",
         "Better Auth",
-        "REST API basics",
-        "CRUD flows",
-        "Database schema",
+        "CRUD workflows",
+        "Database schemas",
       ],
       variant: "muted",
     },
     {
       label: "Tools",
-      skills: ["Git", "GitHub", "Vercel", "Vercel deployment", "VS Code"],
+      skills: ["Git", "GitHub", "Vercel", "VS Code"],
       variant: "muted",
     },
     {
-      label: "Currently learning",
+      label: "Additional Learning",
       skills: ["Go", "Backend API design", "Data analytics"],
       variant: "muted",
     },
@@ -61,10 +60,10 @@ export const cvData = {
   languages: [
     "Kazakh - Native",
     "Russian - Fluent",
-    "English - B1/B2, technical reading",
+    "English - Intermediate (B1/B2), technical reading",
   ],
   summary:
-    "Frontend Developer Intern / Junior Web Developer based in Astana, focused on React, Next.js, TypeScript, and responsive web applications. Built and deployed live student projects with authentication, protected routes, database integration, reusable UI components, and Vercel deployment. Currently studying Big Data Analytics at Astana IT University and seeking a frontend internship or junior developer opportunity.",
+    "Frontend developer and Big Data Analytics student with hands-on experience building and deploying two responsive web applications using Next.js, React, and TypeScript. Implemented authentication, protected routes, reusable UI components, and database-backed features with Supabase and MongoDB.",
   capabilities: [
     "Build responsive pages from designs and mockups",
     "Create reusable React and shadcn/ui components",
@@ -73,23 +72,14 @@ export const cvData = {
     "Implement protected routes and account authentication flows",
     "Use Git, GitHub, and Vercel in deployment workflows",
   ],
-  practicalExperience: {
-    title: "Project Experience",
-    period: "2024 - Present",
-    points: [
-      "Built and deployed student web applications using Next.js, TypeScript, Supabase, MongoDB, and Vercel.",
-      "Owned routing, responsive UI, reusable components, authentication flows, and database-connected CRUD features.",
-      "Maintained source code on GitHub with live demos, project screenshots, and public repositories.",
-    ],
-  },
+
   educationHistory: [
     {
-      period: "09/2025 - Present | Expected graduation: 2028",
-      title: "Bachelor's Degree in Big Data Analytics",
+      period: "Sep 2025 - Present | Expected graduation: 2028",
+      title: "Bachelor's degree in Big Data Analytics",
       company: "Astana IT University, Astana",
       points: [
-        "Coursework: programming, databases, data analysis, information processing.",
-        "Continuing frontend practice with React, Next.js, Tailwind CSS.",
+        "Relevant coursework: Programming, Databases, Data Analysis, Information Processing.",
       ],
     },
   ],
@@ -137,9 +127,9 @@ export const cvData = {
         },
       ],
       details: [
-        "Built a responsive platform for first-year students to access schedules, deadlines, and academic resources.",
-        "Implemented Supabase authentication, protected routes, and database-connected content.",
-        "Created reusable UI components and deployed the project on Vercel.",
+        "Implemented Supabase authentication, protected routes, and database-backed academic content.",
+        "Built reusable interface components and responsive layouts with Tailwind CSS and shadcn/ui.",
+        "Deployed the application on Vercel and published the source code on GitHub.",
       ],
       caseStudy: {
         problem:
@@ -171,9 +161,9 @@ export const cvData = {
         },
       ],
       details: [
-        "Built a web app for creating, managing, and sharing digital invitations.",
-        "Developed event forms, invitation preview pages, and responsive user flows.",
-        "Integrated Better Auth and MongoDB for authentication and persistent invitation data.",
+        "Developed event creation forms, invitation preview pages, and the end-to-end invitation creation flow.",
+        "Integrated Better Auth with MongoDB for account authentication and persistent invitation data.",
+        "Created responsive, reusable components for the form and preview interfaces.",
       ],
       caseStudy: {
         problem:
@@ -187,15 +177,47 @@ export const cvData = {
       },
     },
   ],
+  hackathons: [
+    {
+      period: "Mar - Apr 2026",
+      name: "Decentrathon 5.0",
+      organization: "AI InDrive track",
+      result: "Participant",
+      certificateHref: "https://arlan-6.github.io/certificates/hackathon/decentrathon5.pdf",
+    },
+    {
+      period: "Apr 2026",
+      name: "HackNU/26",
+      organization: "Nazarbayev University ACM Student Chapter",
+      result: "Participant",
+      certificateHref: "https://arlan-6.github.io/certificates/hackathon/hackNu26.pdf",
+    },
+    {
+      period: "Oct 2025",
+      name: "HackNU/25",
+      organization: "Nazarbayev University ACM Student Chapter",
+      result: "Participant",
+      certificateHref:
+        "https://arlan-6.github.io/certificates/hackathon/Arlan_Alibay_hacknu2025_certificate.pdf",
+    },
+  ],
+  certifications: [
+    {
+      period: "Jul 2026",
+      name: "Python for Data Science, AI & Development",
+      issuer: "IBM via Coursera",
+      credentialHref: "https://coursera.org/verify/0F3SOSJZL6X0",
+      certificateHref:
+        "https://arlan-6.github.io/certificates/coursera/Coursera%200F3SOSJZL6X0.pdf",
+    },
+  ],
   leadershipActivities: [
     {
       period: "2026 - Present",
       title: "Digital Committee Member",
       organization: "Student Association, AITU",
       points: [
-        "Participate in the digital committee focused on student-facing digital initiatives.",
-        "Support early-stage planning and coordination of digital projects.",
-        "Collaborate with other students on ideas for university digital services.",
+        "Contribute to planning and coordination for student-facing digital initiatives within AITU's Student Association.",
       ],
     },
   ],

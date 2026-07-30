@@ -17,9 +17,10 @@ export default function CvPage() {
     skillGroups,
     languages,
     summary,
-    practicalExperience,
     educationHistory,
     projects,
+    hackathons,
+    certifications,
     leadershipActivities,
   } = cvData;
 
@@ -34,12 +35,6 @@ export default function CvPage() {
             {profile.latinName}
           </h1>
           <p className="mt-1 text-sm text-gray-600">{profile.name}</p>
-          <p className="mt-3 text-sm font-semibold text-gray-800">
-            Target: {profile.targetPosition}
-          </p>
-          <p className="mt-1 text-sm text-gray-700">
-            Availability: {profile.availability}
-          </p>
           <div className="mt-3 text-sm text-gray-700">
             <span>{profile.location}</span>
             <span aria-hidden="true"> · </span>
@@ -57,6 +52,9 @@ export default function CvPage() {
               </span>
             ))}
           </div>
+          <p className="mt-2 text-sm font-medium text-gray-700">
+            {profile.availability}
+          </p>
           <div className="mt-3 flex flex-wrap gap-2 print:hidden">
             <a
               href="/alibay-arlan-cv.pdf"
@@ -90,31 +88,13 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Project Experience">
-              <div className="break-inside-avoid">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-base font-semibold">
-                    {practicalExperience.title}
-                  </h3>
-                  <p className="text-xs text-gray-500">
-                    {practicalExperience.period}
-                  </p>
-                </div>
-                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
-                  {practicalExperience.points.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </CvSection>
-
-            <CvSection title="Projects">
+            <CvSection title="Selected Projects">
               <div className="space-y-5 print:space-y-3">
                 {projects.map((project) => (
                   <div key={project.name} className="break-inside-avoid">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h3 className="text-base font-semibold">
-                        {project.name} — {project.subtitle}
+                        {project.name} - {project.subtitle}
                       </h3>
                     </div>
                     <p className="mt-1 text-sm text-gray-700 print:leading-5">
@@ -142,16 +122,16 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Leadership & Activities">
+            <CvSection title="Education">
               <div className="space-y-4 print:space-y-2">
-                {leadershipActivities.map((item) => (
+                {educationHistory.map((item) => (
                   <div
-                    key={`${item.organization}-${item.period}`}
+                    key={`${item.company}-${item.period}`}
                     className="break-inside-avoid"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h3 className="text-base font-semibold">
-                        {item.title} — {item.organization}
+                        {item.company} - {item.title}
                       </h3>
                       <p className="text-xs text-gray-500">{item.period}</p>
                     </div>
@@ -165,16 +145,64 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Education">
+            <CvSection title="Hackathons & Certifications">
+              <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2 print:gap-6">
+                <div className="break-inside-avoid">
+                  <h3 className="text-sm font-semibold">Hackathons</h3>
+                  <div className="mt-2 space-y-2 print:space-y-1">
+                    {hackathons.map((item) => (
+                      <div key={`${item.name}-${item.period}`}>
+                        <div className="flex items-baseline justify-between gap-2">
+                          <p className="font-semibold text-gray-900">
+                            <a href={item.certificateHref}>{item.name}</a>
+                          </p>
+                          <p className="shrink-0 text-xs text-gray-500">
+                            {item.period}
+                          </p>
+                        </div>
+                        <p className="text-xs text-gray-600">
+                          {item.result} · {item.organization}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="break-inside-avoid">
+                  <h3 className="text-sm font-semibold">Certification</h3>
+                  <div className="mt-2">
+                    {certifications.map((item) => (
+                      <div key={`${item.name}-${item.period}`}>
+                        <div className="flex items-baseline justify-between gap-2">
+                          <p className="font-semibold text-gray-900">
+                            {item.name}
+                          </p>
+                          <p className="shrink-0 text-xs text-gray-500">
+                            {item.period}
+                          </p>
+                        </div>
+                        <p className="text-xs text-gray-600">
+                          {item.issuer} ·{" "}
+                          <a href={item.credentialHref}>Verify credential</a>
+                          <span aria-hidden="true"> · </span>
+                          <a href={item.certificateHref}>Certificate</a>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CvSection>
+
+            <CvSection title="Leadership">
               <div className="space-y-4 print:space-y-2">
-                {educationHistory.map((item) => (
+                {leadershipActivities.map((item) => (
                   <div
-                    key={`${item.company}-${item.period}`}
+                    key={`${item.organization}-${item.period}`}
                     className="break-inside-avoid"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h3 className="text-base font-semibold">
-                        {item.company} — {item.title}
+                        {item.title} - {item.organization}
                       </h3>
                       <p className="text-xs text-gray-500">{item.period}</p>
                     </div>

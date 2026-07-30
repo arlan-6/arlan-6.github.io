@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { AboutSection } from "@/components/portfolio/about-section";
+import { AchievementsSection } from "@/components/portfolio/achievements-section";
 import { CapabilitiesSection } from "@/components/portfolio/capabilities-section";
 import {
   sectionItems,
@@ -29,6 +30,8 @@ export default function Home() {
     languages,
     summary,
     capabilities,
+    hackathons,
+    certifications,
     leadershipActivities,
   } = cvData;
   const [activeSection, setActiveSection] = useState<SectionId>(
@@ -134,6 +137,10 @@ export default function Home() {
           <div className="min-w-0 space-y-10 lg:space-y-14">
             <AboutSection links={links} profile={profile} summary={summary} />
             <ProjectsSection projects={projects} />
+            <AchievementsSection
+              certifications={certifications}
+              hackathons={hackathons}
+            />
             <LeadershipSection leadershipActivities={leadershipActivities} />
             <SkillsSection languages={languages} skillGroups={skillGroups} />
             <CapabilitiesSection capabilities={capabilities} />

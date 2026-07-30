@@ -43,7 +43,7 @@ export function SiteHeader({
           </span>
         </button>
 
-        <nav aria-label="Sections" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Sections" className="hidden items-center gap-1 lg:flex">
           {sectionItems.map((item) => (
             <Button
               key={item.id}
