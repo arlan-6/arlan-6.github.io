@@ -82,6 +82,14 @@ export const cvData = {
         "Relevant coursework: Programming, Databases, Data Analysis, Information Processing.",
       ],
     },
+    {
+      period: "2026 - Present",
+      title: "Core Software Development Program (01 Edu)",
+      company: "Tomorrow School, Astana Hub",
+      points: [
+        "Peer-to-peer, project-based software development curriculum with collaborative problem-solving and peer review.",
+      ],
+    },
   ],
   projects: [
     {
