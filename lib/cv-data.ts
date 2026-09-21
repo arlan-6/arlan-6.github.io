@@ -138,9 +138,9 @@ export const cvData = {
         },
       ],
       details: [
-        "Implemented Supabase authentication, protected routes, and database-backed academic content.",
-        "Built reusable interface components and responsive layouts with Tailwind CSS and shadcn/ui.",
-        "Deployed the application on Vercel and published the source code on GitHub.",
+        "Built and deployed a student information platform using Next.js and Supabase.",
+        "Designed authentication and protected-route flows and integrated database-backed academic content.",
+        "Structured reusable application components and deployed the production application on Vercel.",
       ],
       caseStudy: {
         problem:
@@ -148,9 +148,9 @@ export const cvData = {
         solution:
           "Developed one interface for schedules, deadlines, and academic resources to help new students adapt faster to university workflows.",
         role:
-          "Frontend development, UI design, authentication setup, database integration, and deployment.",
+          "Application architecture, authentication setup, database integration, and deployment.",
         learned:
-          "Protected routes, reusable components, database records, responsive layout, and deployment workflow.",
+          "Access control through protected routes, database-backed content, component boundaries, and production deployment.",
       },
     },
     {
