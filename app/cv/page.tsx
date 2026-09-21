@@ -75,6 +75,29 @@ export default function CvPage() {
               </p>
             </CvSection>
 
+            <CvSection title="Education">
+              <div className="space-y-4 print:space-y-2">
+                {educationHistory.map((item) => (
+                  <div
+                    key={`${item.company}-${item.period}`}
+                    className="break-inside-avoid"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-base font-semibold">
+                        {item.company} - {item.title}
+                      </h3>
+                      <p className="text-xs text-gray-500">{item.period}</p>
+                    </div>
+                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
+                      {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </CvSection>
+
             <CvSection title="Technical Skills">
               <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 print:grid-cols-2">
                 {skillGroups.map((group) => (
@@ -122,28 +145,7 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Education">
-              <div className="space-y-4 print:space-y-2">
-                {educationHistory.map((item) => (
-                  <div
-                    key={`${item.company}-${item.period}`}
-                    className="break-inside-avoid"
-                  >
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="text-base font-semibold">
-                        {item.company} - {item.title}
-                      </h3>
-                      <p className="text-xs text-gray-500">{item.period}</p>
-                    </div>
-                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-gray-700 print:space-y-0.5 print:leading-5">
-                      {item.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </CvSection>
+
 
             <CvSection title="Hackathons & Certifications">
               <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2 print:gap-6">

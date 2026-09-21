@@ -8,12 +8,13 @@ import {
 
 export const sectionItems = [
   { id: "about", label: "About" },
+  { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
   { id: "achievements", label: "Credentials" },
   { id: "activities", label: "Activities" },
   { id: "skills", label: "Skills" },
   { id: "capabilities", label: "Can Do" },
-  { id: "education", label: "Education" },
+
   { id: "connect", label: "Connect" },
 ] as const;
 

@@ -136,6 +136,7 @@ export default function Home() {
 
           <div className="min-w-0 space-y-10 lg:space-y-14">
             <AboutSection links={links} profile={profile} summary={summary} />
+            <EducationSection educationHistory={educationHistory} />
             <ProjectsSection projects={projects} />
             <AchievementsSection
               certifications={certifications}
@@ -144,7 +145,7 @@ export default function Home() {
             <LeadershipSection leadershipActivities={leadershipActivities} />
             <SkillsSection languages={languages} skillGroups={skillGroups} />
             <CapabilitiesSection capabilities={capabilities} />
-            <EducationSection educationHistory={educationHistory} />
+
             <ConnectSection links={links} profile={profile} />
           </div>
         </section>
