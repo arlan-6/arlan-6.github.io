@@ -96,7 +96,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-              Frontend internship or junior frontend developer role.
+              {profile.targetPosition}.
             </span>
           </a>
         </div>
