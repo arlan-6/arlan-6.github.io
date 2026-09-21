@@ -26,14 +26,14 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     >
       <div className="mb-5">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Featured Projects
+          Engineering in Practice
         </p>
         <h2 className="mt-2 font-heading text-3xl tracking-tight">
-          Product work with screenshots and source
+          Selected Technical Projects
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Live projects with authentication, database-backed features,
-          responsive layouts, and reusable UI components.
+          Software engineering projects with source code, implementation
+          details, and live demos.
         </p>
       </div>
 

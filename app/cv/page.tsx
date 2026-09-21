@@ -111,7 +111,7 @@ export default function CvPage() {
               </div>
             </CvSection>
 
-            <CvSection title="Selected Projects">
+            <CvSection title="Selected Technical Projects">
               <div className="space-y-5 print:space-y-3">
                 {projects.map((project) => (
                   <div key={project.name} className="break-inside-avoid">
