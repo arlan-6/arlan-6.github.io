@@ -172,19 +172,19 @@ export const cvData = {
         },
       ],
       details: [
-        "Developed event creation forms, invitation preview pages, and the end-to-end invitation creation flow.",
-        "Integrated Better Auth with MongoDB for account authentication and persistent invitation data.",
-        "Created responsive, reusable components for the form and preview interfaces.",
+        "Developed a full-stack invitation platform with persistent user and event data.",
+        "Integrated Better Auth and MongoDB for authentication and storage.",
+        "Implemented the complete invitation creation workflow from form input to generated public preview.",
       ],
       caseStudy: {
         problem:
           "Event organizers need a simple way to create and share invitations online.",
         solution:
-          "Built a multi-step invitation creation flow with persistent event data, account authentication, and responsive preview pages.",
+          "Built a multi-step invitation creation flow connecting account authentication, persistent event data, and shareable public previews.",
         role:
-          "Frontend development, form flow implementation, authentication, and database integration.",
+          "End-to-end invitation workflow, form state management, authentication, and database integration.",
         learned:
-          "Form state, preview layouts, MongoDB persistence, and Better Auth integration.",
+          "Form-to-preview data flow, MongoDB persistence, and Better Auth integration.",
       },
     },
   ],
