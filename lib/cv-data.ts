@@ -3,7 +3,7 @@ export const cvData = {
     name: "Әлібай Арлан Аханұлы",
     latinName: "Alibay Arlan Akhanuly",
     initials: "AR",
-    role: "Junior Frontend Developer",
+    role: "Software Developer & Big Data Analytics Student",
     location: "Astana, Kazakhstan",
     email: "arlanhan1997@gmail.com",
     phone: "+7 707 259 6137",
