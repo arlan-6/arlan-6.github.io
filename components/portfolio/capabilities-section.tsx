@@ -16,10 +16,10 @@ export function CapabilitiesSection({
     >
       <div className="mb-5">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Practical Skills
+          Learning & Practice
         </p>
         <h2 className="mt-2 font-heading text-3xl tracking-tight">
-          Project ownership areas
+          Technical Focus
         </h2>
       </div>
 

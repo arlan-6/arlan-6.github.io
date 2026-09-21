@@ -13,7 +13,7 @@ export const sectionItems = [
   { id: "achievements", label: "Achievements" },
 
   { id: "skills", label: "Skills" },
-  { id: "capabilities", label: "Can Do" },
+  { id: "capabilities", label: "Focus" },
 
   { id: "activities", label: "Leadership" },
   { id: "connect", label: "Connect" },

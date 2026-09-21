@@ -68,12 +68,12 @@ export const cvData = {
   summary:
     "Big Data Analytics student at Astana IT University with hands-on experience building and deploying software with authentication, protected routes and persistent data. Developing software engineering skills through full-stack projects and Tomorrow School's peer-reviewed curriculum, with foundational Python coursework and an interest in data analysis and AI. Seeking an internship to apply these foundations to practical engineering problems.",
   capabilities: [
-    "Build responsive pages from designs and mockups",
-    "Create reusable React and shadcn/ui components",
-    "Work with Next.js routing, layouts, and frontend architecture",
-    "Connect apps to Supabase or MongoDB-backed data",
-    "Implement protected routes and account authentication flows",
-    "Use Git, GitHub, and Vercel in deployment workflows",
+    "Software engineering: application structure, authentication, and persistent data",
+    "Python and data analysis: developing foundations through coursework",
+    "Algorithms and problem-solving: ongoing practice in a peer-reviewed curriculum",
+    "Backend systems: learning Go and API design",
+    "Web development: full-stack applications with Next.js, Supabase, and MongoDB",
+    "Development workflow: Git, collaborative review, and deployment",
   ],
 
   educationHistory: [
