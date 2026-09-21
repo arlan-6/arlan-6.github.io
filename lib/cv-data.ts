@@ -9,7 +9,7 @@ export const cvData = {
     phone: "+7 707 259 6137",
     targetPosition: "Frontend Internship / Junior Frontend Developer",
     tagline:
-      "React, Next.js, TypeScript, and responsive web applications.",
+      "Building software with authentication and persistent data; developing a foundation in Python and data analysis.",
     availability:
       "Open to frontend internships and junior opportunities in Astana or remote",
   },

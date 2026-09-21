@@ -24,7 +24,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
       className="scroll-mt-24 border-b border-border pb-10 sm:pb-12"
     >
       <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-        {profile.targetPosition}
+        Software engineering · Data & AI interests
       </p>
       <div className="grid min-w-0 gap-6 xl:grid-cols-[1fr_260px]">
         <div className="min-w-0">
