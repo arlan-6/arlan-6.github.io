@@ -20,8 +20,8 @@ export function SkillsSection({ languages, skillGroups }: SkillsSectionProps) {
           Technical skills
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Frontend, backend, database, and deployment tools I use in live
-          projects and continue to build on.
+          Programming foundations, web development, databases, and tools.
+          Coursework and ongoing learning are labeled separately.
         </p>
       </div>
 

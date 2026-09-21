@@ -81,7 +81,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
               />
             </span>
             <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-              Frontend systems, UI modules, and product flows.
+              Software projects, authentication, and data workflows.
             </span>
           </a>
           <a
