@@ -10,7 +10,7 @@ export const sectionItems = [
   { id: "about", label: "About" },
   { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
-  { id: "achievements", label: "Credentials" },
+  { id: "achievements", label: "Achievements" },
   { id: "activities", label: "Activities" },
   { id: "skills", label: "Skills" },
   { id: "capabilities", label: "Can Do" },

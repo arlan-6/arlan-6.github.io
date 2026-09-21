@@ -147,7 +147,7 @@ export default function CvPage() {
 
 
 
-            <CvSection title="Hackathons & Certifications">
+            <CvSection title="Achievements & Technical Activities">
               <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2 print:gap-6">
                 <div className="break-inside-avoid">
                   <h3 className="text-sm font-semibold">Hackathons</h3>
