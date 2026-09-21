@@ -1,6 +1,7 @@
 import {
   IconAward,
   IconCertificate,
+  IconExternalLink,
 } from "@tabler/icons-react";
 
 import { Badge } from "@/components/ui/badge";
