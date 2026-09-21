@@ -11,7 +11,7 @@ export const cvData = {
     tagline:
       "Building software with authentication and persistent data; developing a foundation in Python and data analysis.",
     availability:
-      "Open to frontend internships and junior opportunities in Astana or remote",
+      "Open to software engineering, data and AI-oriented internships in Astana or remote",
   },
   links: [
     { label: "Portfolio", href: "https://arlan-6.github.io" },
