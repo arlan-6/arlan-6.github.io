@@ -1,6 +1,5 @@
 import {
   IconAward,
-  IconCertificate,
   IconExternalLink,
 } from "@tabler/icons-react";
 
