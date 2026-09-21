@@ -1,7 +1,6 @@
 import {
   IconAward,
   IconCertificate,
-  IconExternalLink,
 } from "@tabler/icons-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -46,7 +45,7 @@ export function AchievementsSection({
         </div>
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-2">
+      <div className="space-y-5">
         <div className="overflow-hidden rounded-lg border border-border bg-card text-card-foreground">
           <div className="flex items-center gap-3 border-b border-border bg-muted/30 px-5 py-4 sm:px-6">
             <IconAward aria-hidden="true" className="size-5 text-primary" />
@@ -91,58 +90,21 @@ export function AchievementsSection({
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-border bg-card text-card-foreground">
-          <div className="flex items-center gap-3 border-b border-border bg-muted/30 px-5 py-4 sm:px-6">
-            <IconCertificate
-              aria-hidden="true"
-              className="size-5 text-primary"
-            />
-            <h3 className="font-heading text-xl tracking-tight">
-              Professional certification
-            </h3>
-          </div>
-          <div className="divide-y divide-border">
-            {certifications.map((item) => (
-              <article key={`${item.name}-${item.period}`} className="p-5 sm:p-6">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <h4 className="font-heading text-lg tracking-tight">
-                      {item.name}
-                    </h4>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                      {item.issuer}
-                    </p>
-                  </div>
-                  <p className="shrink-0 text-sm font-medium text-muted-foreground">
-                    {item.period}
-                  </p>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href={item.credentialHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={buttonVariants({ size: "sm" })}
-                  >
-                    <IconExternalLink aria-hidden="true" />
-                    Verify credential
-                  </a>
-                  <a
-                    href={item.certificateHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={buttonVariants({
-                      variant: "outline",
-                      size: "sm",
-                    })}
-                  >
-                    <IconCertificate aria-hidden="true" />
-                    View certificate
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div className="border-t border-border pt-4">
+          <h3 className="text-sm font-semibold text-muted-foreground">
+            Supporting coursework
+          </h3>
+          {certifications.map((item) => (
+            <p key={`${item.name}-${item.period}`} className="mt-2 text-sm leading-6 text-muted-foreground">
+              {item.name} · {item.issuer} · {item.period}{" · "}
+              <a href={item.credentialHref} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                Verify credential
+              </a>{" · "}
+              <a href={item.certificateHref} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                View certificate
+              </a>
+            </p>
+          ))}
         </div>
       </div>
     </section>
