@@ -6,7 +6,6 @@ export const cvData = {
     role: "Software Developer & Big Data Analytics Student",
     location: "Astana, Kazakhstan",
     email: "arlanhan1997@gmail.com",
-    phone: "+7 707 259 6137",
     targetPosition: "Software engineering, data and AI-oriented internship opportunities",
     tagline:
       "Building software with authentication and persistent data; developing a foundation in Python and data analysis.",

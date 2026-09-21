@@ -4,7 +4,6 @@ import {
   IconDownload,
   IconMail,
   IconMapPin,
-  IconPhone,
 } from "@tabler/icons-react";
 
 import { socialIcons } from "@/components/portfolio/constants";
@@ -96,13 +95,11 @@ export function ProfileCard({
                 <IconMapPin aria-hidden="true" className="size-4 shrink-0" />
                 <span>{profile.location}</span>
               </p>
-              <p className="flex items-center gap-3 border-b border-border px-3 py-2.5 text-muted-foreground">
-                <IconMail aria-hidden="true" className="size-4 shrink-0" />
-                <span className="min-w-0 truncate">{profile.email}</span>
-              </p>
               <p className="flex items-center gap-3 px-3 py-2.5 text-muted-foreground">
-                <IconPhone aria-hidden="true" className="size-4 shrink-0" />
-                <span>{profile.phone}</span>
+                <IconMail aria-hidden="true" className="size-4 shrink-0" />
+                <a href={`mailto:${profile.email}`} className="min-w-0 truncate">
+                  {profile.email}
+                </a>
               </p>
             </div>
           </div>

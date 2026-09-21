@@ -4,6 +4,7 @@ import { IconDownload } from "@tabler/icons-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cvData } from "@/lib/cv-data";
+import { cvContact } from "@/lib/cv-contact";
 
 export const metadata: Metadata = {
   title: "CV",
@@ -40,7 +41,7 @@ export default function CvPage() {
             <span aria-hidden="true"> · </span>
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
             <span aria-hidden="true"> · </span>
-            <span>{profile.phone}</span>
+            <span>{cvContact.phone}</span>
           </div>
           <div className="mb-3 mt-1 text-sm text-gray-700 print:mb-2">
             {links.map((link, index) => (

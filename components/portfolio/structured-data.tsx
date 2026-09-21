@@ -24,7 +24,6 @@ export function StructuredData({
       alternateName: profile.name,
       jobTitle: profile.role,
       email: profile.email,
-      telephone: profile.phone,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Astana",
