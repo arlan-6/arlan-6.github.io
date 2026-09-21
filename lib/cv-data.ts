@@ -140,7 +140,7 @@ export const cvData = {
       details: [
         "Built and deployed a student information platform using Next.js and Supabase.",
         "Designed authentication and protected-route flows and integrated database-backed academic content.",
-        "Structured reusable application components and deployed the production application on Vercel.",
+        "Connected four application tables for deadlines, schedules, academic activities, and study reminders; deployed on Vercel.",
       ],
       caseStudy: {
         problem:
@@ -173,7 +173,7 @@ export const cvData = {
       ],
       details: [
         "Developed a full-stack invitation platform with persistent user and event data.",
-        "Integrated Better Auth and MongoDB for authentication and storage.",
+        "Integrated Better Auth and MongoDB through an eight-model Prisma schema covering accounts, sessions, templates, and invitations.",
         "Implemented the complete invitation creation workflow from form input to generated public preview.",
       ],
       caseStudy: {
