@@ -24,16 +24,19 @@ export const cvData = {
   ],
   skillGroups: [
     {
-      label: "Frontend",
+      label: "Programming",
+      skills: ["Python (foundational coursework)", "TypeScript", "JavaScript"],
+      variant: "accent",
+    },
+    {
+      label: "Web Development",
       skills: [
         "React",
         "Next.js",
-        "TypeScript",
-        "JavaScript",
         "Tailwind CSS",
         "shadcn/ui",
       ],
-      variant: "accent",
+      variant: "muted",
     },
     {
       label: "Backend & Databases",
