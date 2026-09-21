@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Portfolio of Alibay Arlan Akhanuly, a Big Data Analytics student at Astana IT University building software with authentication and persistent data, with interests in data analysis and AI.",
   url: "https://arlan-6.github.io",
-  ogImage: "/og-image.png",
+  ogImage: "/social-preview.png",
   locale: "en_US",
   keywords: [
     "Alibay Arlan Akhanuly",
