@@ -11,10 +11,11 @@ export const sectionItems = [
   { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
   { id: "achievements", label: "Achievements" },
-  { id: "activities", label: "Activities" },
+
   { id: "skills", label: "Skills" },
   { id: "capabilities", label: "Can Do" },
 
+  { id: "activities", label: "Leadership" },
   { id: "connect", label: "Connect" },
 ] as const;
 

@@ -142,10 +142,11 @@ export default function Home() {
               certifications={certifications}
               hackathons={hackathons}
             />
-            <LeadershipSection leadershipActivities={leadershipActivities} />
+
             <SkillsSection languages={languages} skillGroups={skillGroups} />
             <CapabilitiesSection capabilities={capabilities} />
 
+            <LeadershipSection leadershipActivities={leadershipActivities} />
             <ConnectSection links={links} profile={profile} />
           </div>
         </section>
