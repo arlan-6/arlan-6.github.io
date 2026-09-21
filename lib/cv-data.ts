@@ -63,7 +63,7 @@ export const cvData = {
     "English - Intermediate (B1/B2), technical reading",
   ],
   summary:
-    "Frontend developer and Big Data Analytics student with hands-on experience building and deploying two responsive web applications using Next.js, React, and TypeScript. Implemented authentication, protected routes, reusable UI components, and database-backed features with Supabase and MongoDB.",
+    "Big Data Analytics student at Astana IT University with hands-on experience building and deploying software with authentication, protected routes and persistent data. Developing software engineering skills through full-stack projects and Tomorrow School's peer-reviewed curriculum, with foundational Python coursework and an interest in data analysis and AI. Seeking an internship to apply these foundations to practical engineering problems.",
   capabilities: [
     "Build responsive pages from designs and mockups",
     "Create reusable React and shadcn/ui components",
