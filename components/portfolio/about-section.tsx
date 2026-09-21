@@ -43,7 +43,7 @@ export function AboutSection({ links, profile, summary }: AboutSectionProps) {
               View Projects
             </a>
             <a
-              href="/cv/"
+              href="/alibay-arlan-cv.pdf"
               className={buttonVariants({ variant: "outline", size: "lg" })}
             >
               <IconFileCv aria-hidden="true" />
